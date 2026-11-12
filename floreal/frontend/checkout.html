@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Express Checkout | Floreal Forever Flowers</title>
+  <meta name="description" content="Secure checkout for your handcrafted forever crochet flowers. Pan-India express delivery with Razorpay UPI and COD options.">
+  <link rel="icon" type="image/webp" href="http://localhost:5000/images/favicon-16x16_3_32x32.webp">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body style="background: var(--color-bg-subtle);">
+
+  <!-- Checkout Minimal Header -->
+  <header style="background: #fff; border-bottom: 1px solid var(--color-border); padding: 14px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html" class="header-logo">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="110" height="52">
+        </a>
+        <a href="cart.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #475569; text-decoration: none; padding: 6px 14px; border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; transition: all 0.2s;" onmouseover="this.style.background='#f1f5f9'; this.style.borderColor='#cbd5e1';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          ← Return to Cart
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-text-muted);">
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 30px 0 80px;">
+    <div class="container">
+      <!-- Breadcrumb Navigation -->
+      <div class="breadcrumbs" style="margin-bottom: 24px; font-size: 13px;">
+        <a href="index.html" style="color: #64748b; text-decoration: none;">Home</a>
+        <span>/</span>
+        <a href="cart.html" style="color: #64748b; text-decoration: none;">Shopping Bag</a>
+        <span>/</span>
+        <span style="color: #1e293b; font-weight: 600;">Express Checkout</span>
+      </div>
+      <div class="checkout-container">
+        
+        <!-- Left: 2-Step Checkout Form -->
+        <div class="checkout-main">
+          
+          <!-- Step 1: Customer Contact & Delivery Address -->
+          <div class="checkout-card active" id="checkoutStep1">
+            <div class="checkout-card-header">
+              <div class="step-number-circle">1</div>
+              <div>
+                <h3 style="font-size: 17px; margin-bottom: 2px;">Contact & Delivery Details</h3>
+                <p style="font-size: 12px; color: var(--color-text-muted); margin: 0;">Where should our artisans dispatch your forever blooms?</p>
+              </div>
+            </div>
+
+            <!-- Review Summary if Completed -->
+            <div id="step1CompletedSummary" style="display: none; background: #fdf5f6; padding: 12px; border-radius: 6px; font-size: 13px; margin-bottom: 15px; border-left: 3px solid var(--color-primary);"></div>
+
+            <form id="step1Form" onsubmit="event.preventDefault();">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="customerName">Full Name *</label>
+                  <input type="text" id="customerName" placeholder="e.g. Ananya Sharma" required>
+                </div>
+                <div class="form-group">
+                  <label for="customerPhone">10-Digit Mobile Number *</label>
+                  <input type="tel" id="customerPhone" placeholder="e.g. 9876543210" maxlength="10" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="customerEmail">Email Address (For Invoice & Tracking)</label>
+                <input type="email" id="customerEmail" placeholder="e.g. ananya@gmail.com">
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="shippingPincode">6-Digit Indian PIN Code *</label>
+                  <input type="text" id="shippingPincode" placeholder="e.g. 400001" maxlength="6" required>
+                </div>
+                <div class="form-group">
+                  <label for="shippingCity">City *</label>
+                  <input type="text" id="shippingCity" placeholder="City" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="shippingState">State *</label>
+                  <input type="text" id="shippingState" placeholder="State" required>
+                </div>
+                <div class="form-group">
+                  <label for="shippingLandmark">Landmark (Optional)</label>
+                  <input type="text" id="shippingLandmark" placeholder="Near Metro station, Park, etc.">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="shippingAddress">Street Address / House No. / Building *</label>
+                <textarea id="shippingAddress" rows="2" placeholder="Flat No., Wing, Apartment, Street name" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="giftMessageInput">Special Order Instructions / Personalized Note (Optional)</label>
+                <input type="text" id="giftMessageInput" placeholder="Add custom greeting note for recipient">
+              </div>
+
+              <button type="button" class="btn btn-primary btn-full" id="continueToStep2Btn" style="padding: 14px; margin-top: 10px;">
+                Continue to Shipping & Payment ➔
+              </button>
+              <div style="text-align: center; margin-top: 14px;">
+                <a href="cart.html" style="font-size: 13px; color: #64748b; text-decoration: underline;">← Return to Cart to modify items or quantities</a>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 2: Shipping & Payment Method -->
+          <div class="checkout-card disabled" id="checkoutStep2">
+            <div class="checkout-card-header">
+              <div class="step-number-circle">2</div>
+              <div>
+                <h3 style="font-size: 17px; margin-bottom: 2px;">Shipping & Payment Options</h3>
+                <p style="font-size: 12px; color: var(--color-text-muted); margin: 0;">Select your preferred payment method</p>
+              </div>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="payment-method-options">
+              <!-- Razorpay Online -->
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="razorpay" checked>
+                <div class="payment-details">
+                  <strong>⚡ Razorpay Online (Instant UPI, Cards & Netbanking)</strong>
+                  <small>Google Pay, PhonePe, Paytm, CRED, Visa, Mastercard, RuPay</small>
+                </div>
+              </label>
+
+              <!-- Cash on Delivery -->
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="cod">
+                <div class="payment-details">
+                  <strong>💵 Cash on Delivery (COD)</strong>
+                  <small>Pay at your doorstep (+₹49 COD verification fee)</small>
+                </div>
+              </label>
+
+              <!-- WhatsApp Direct Order -->
+              <label class="payment-radio-label">
+                <input type="radio" name="paymentMethod" value="whatsapp">
+                <div class="payment-details">
+                  <strong>💬 1-Click WhatsApp Direct Order</strong>
+                  <small>Confirm order directly with Floreal artisan support on WhatsApp</small>
+                </div>
+              </label>
+            </div>
+
+            <div style="display: flex; gap: 12px;">
+              <button type="button" class="btn btn-outline" id="backToStep1Btn" style="flex: 1;">
+                ← Back to Address
+              </button>
+              <button type="button" class="btn btn-primary" id="placeOrderBtn" style="flex: 2; padding: 14px;">
+                Place Order Now 🔒
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Sticky Order Summary -->
+        <aside class="checkout-sidebar">
+          <h3 style="font-size: 17px; margin-bottom: 16px;">Order Summary</h3>
+          
+          <!-- Items List -->
+          <div id="checkoutSummaryItems">
+            <!-- Rendered by checkout.js -->
+          </div>
+
+          <!-- Promo Code Box -->
+          <div class="coupon-box">
+            <input type="text" id="couponCodeInput" placeholder="Promo / Coupon Code">
+            <button type="button" class="btn btn-outline btn-sm" id="applyCouponBtn">Apply</button>
+          </div>
+          <div id="couponMessage"></div>
+
+          <!-- Summary Breakdown -->
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summarySubtotal">₹0.00</span>
+            </div>
+            <div class="summary-row" id="summaryDiscountRow" style="display: none; color: #155724;">
+              <span>Promo Discount</span>
+              <span id="summaryDiscount">-₹0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Express Delivery</span>
+              <span id="summaryShipping">₹99.00</span>
+            </div>
+            <div class="summary-row grand-total">
+              <span>Grand Total</span>
+              <span id="summaryTotal">₹0.00</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; font-size: 11px; color: #777; line-height: 1.5;">
+            By placing this order, you support independent Indian women artisans. Every forever flower bouquet is backed by our damage-free transit replacement guarantee.
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="assets/data/products-data.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>
+

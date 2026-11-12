@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Your Flower Bag | Floreal Handcrafted Forever Flowers</title>
+  <meta name="description" content="Review your handcrafted crochet flower bouquet order, unlock free shipping above ₹999, and add custom gift messages.">
+  <link rel="icon" type="image/webp" href="http://localhost:5000/images/favicon-16x16_3_32x32.webp">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+      <span>🌸 100% Handcrafted Forever Flowers — Never Fade</span>
+      <span>🚚 FREE Shipping on Orders Above ₹999</span>
+      <span>💝 Handcrafted with Love by Women Artisans</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a href="index.html" class="header-logo">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="120" height="57">
+        </a>
+      </div>
+
+      <nav class="main-navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">All Collections</a>
+        <a href="about.html">Our Story</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="wishlist.html" class="header-action-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="wishlist-count-badge" style="display: none;">0</span>
+        </a>
+        <a href="account.html" class="header-action-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> <span>/</span> <span>Your Shopping Bag</span>
+      </div>
+
+      <h1 style="font-size: var(--font-h1); margin-bottom: 24px;">Your Forever Flower Bag</h1>
+
+      <!-- Free Shipping Meter -->
+      <div class="free-shipping-container" style="max-width: 800px; margin-bottom: 30px; border-radius: 8px;">
+        <div class="shipping-progress-text" id="cartPageShippingText">
+          Add <strong>₹999.00</strong> more to get <strong>FREE Shipping</strong>!
+        </div>
+        <div class="shipping-progress-bar-bg">
+          <div class="shipping-progress-fill" id="cartPageShippingFill"></div>
+        </div>
+      </div>
+
+      <div class="catalog-layout" id="cartPageContent" style="grid-template-columns: 2fr 1fr;">
+        <!-- Left: Cart Items Table -->
+        <div class="cart-table-wrapper" style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 20px;">
+          <div id="cartPageEmpty" style="display: none; text-align: center; padding: 60px 20px;">
+            <h3>Your flower bag is empty</h3>
+            <p style="color: #777; margin: 10px 0 20px;">Explore our handcrafted bouquets and everlasting crochet plants.</p>
+            <a href="collections.html" class="btn btn-primary">Start Shopping →</a>
+          </div>
+
+          <div id="cartPageItemsList">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Handwritten Gift Note -->
+          <div style="margin-top: 30px; border-top: 1px solid var(--color-border-light); padding-top: 20px;">
+            <h4 style="font-size: 14px; margin-bottom: 8px;">✍️ Add a Free Personalized Handwritten Gift Note:</h4>
+            <p style="font-size: 12px; color: #777; margin-bottom: 8px;">Our artisans will write your heartfelt message on a decorative greeting card and pack it with your blooms.</p>
+            <textarea id="cartPageGiftNote" rows="3" style="width: 100%; padding: 10px; border: 1px solid var(--color-border); border-radius: 6px; font-family: inherit; font-size: 13px;" placeholder="e.g. Happy Anniversary my love! Forever blooming just like our bond..."></textarea>
+          </div>
+        </div>
+
+        <!-- Right: Order Summary Box -->
+        <div class="checkout-sidebar">
+          <h3 style="font-size: 18px; margin-bottom: 20px;">Order Summary</h3>
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Items Subtotal</span>
+              <strong id="cartPageSubtotal">₹0.00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Pan-India Delivery</span>
+              <strong id="cartPageShippingFee">₹99.00</strong>
+            </div>
+            <div class="summary-row grand-total">
+              <span>Estimated Total</span>
+              <strong id="cartPageGrandTotal" style="color: var(--color-primary);">₹0.00</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 10px;">
+            <a href="checkout.html" class="btn btn-primary btn-full" style="text-align: center; padding: 14px;">
+              Proceed to Checkout ➔
+            </a>
+            <button type="button" class="btn btn-whatsapp btn-full" id="cartPageWhatsappBtn">
+              Order via WhatsApp 💬
+            </button>
+            <a href="collections.html" class="btn btn-outline btn-full" style="text-align: center; font-size: 13px;">
+              ← Continue Shopping
+            </a>
+          </div>
+
+          <div style="margin-top: 20px; font-size: 12px; color: #777; text-align: center;">
+            <p>🔒 100% Secure Checkout with Razorpay UPI & COD</p>
+            <p>🌸 Handcrafted & packed with care in reinforced packaging</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="110" height="50" style="filter: brightness(0) invert(1); margin-bottom: 16px;">
+          <p>Floreal creates eternal crochet forever flowers that never wilt. Celebrating romance, birthdays, and milestones with sustainable floral art.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="returns-policy.html">Replacement Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Need Support?</h4>
+          <a href="https://api.whatsapp.com/send?phone=919876543210" class="btn btn-whatsapp btn-sm" target="_blank">Chat with Us on WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Floreal Inc. Handcrafted Forever Blooms.</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-notice" id="toastNotice"></div>
+
+  <!-- Scripts -->
+  <script src="assets/data/products-data.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function syncCartPage() {
+        const items = window.florealCart ? window.florealCart.items : [];
+        const emptyEl = document.getElementById('cartPageEmpty');
+        const listEl = document.getElementById('cartPageItemsList');
+        const subtotalEl = document.getElementById('cartPageSubtotal');
+        const shippingEl = document.getElementById('cartPageShippingFee');
+        const grandTotalEl = document.getElementById('cartPageGrandTotal');
+        const shipFill = document.getElementById('cartPageShippingFill');
+        const shipText = document.getElementById('cartPageShippingText');
+
+        if (items.length === 0) {
+          if (emptyEl) emptyEl.style.display = 'block';
+          if (listEl) listEl.style.display = 'none';
+          if (subtotalEl) subtotalEl.textContent = '₹0.00';
+          if (grandTotalEl) grandTotalEl.textContent = '₹0.00';
+          return;
+        }
+
+        if (emptyEl) emptyEl.style.display = 'none';
+        if (listEl) {
+          listEl.style.display = 'block';
+          listEl.innerHTML = items.map(i => `
+            <div style="display: flex; align-items: center; gap: 15px; padding: 14px 0; border-bottom: 1px solid var(--color-border-light);">
+              <img src="${i.image}" alt="${i.title}" style="width: 64px; height: 64px; object-fit: cover; border-radius: 6px;">
+              <div style="flex: 1;">
+                <h4 style="font-size: 14px; margin-bottom: 4px;"><a href="product.html?id=${i.id}">${i.title}</a></h4>
+                <div style="font-size: 13px; color: var(--color-primary); font-weight: 600;">₹${parseFloat(i.price).toFixed(2)}</div>
+              </div>
+              <div class="qty-stepper" style="height: 38px;">
+                <button type="button" class="qty-btn" onclick="window.florealCart.changeQuantity('${i.id}', -1); syncCartPage();">-</button>
+                <span class="qty-value">${i.quantity}</span>
+                <button type="button" class="qty-btn" onclick="window.florealCart.changeQuantity('${i.id}', 1); syncCartPage();">+</button>
+              </div>
+              <div style="font-size: 14px; font-weight: 700; min-width: 80px; text-align: right;">
+                ₹${(i.price * i.quantity).toFixed(2)}
+              </div>
+              <button type="button" onclick="window.florealCart.removeItem('${i.id}'); syncCartPage();" style="background: none; border: none; color: #999; cursor: pointer; font-size: 18px;" title="Remove">✕</button>
+            </div>
+          `).join('');
+        }
+
+        const total = window.florealCart.getTotal();
+        const shipping = total >= 999 ? 0 : 99;
+        const grandTotal = total + shipping;
+
+        if (subtotalEl) subtotalEl.textContent = `₹${total.toFixed(2)}`;
+        if (shippingEl) shippingEl.innerHTML = shipping === 0 ? '<span style="color: #198754; font-weight: 600;">FREE</span>' : '₹99.00';
+        if (grandTotalEl) grandTotalEl.textContent = `₹${grandTotal.toFixed(2)}`;
+
+        // Progress meter
+        if (shipFill && shipText) {
+          const remaining = 999 - total;
+          const pct = Math.min(100, Math.round((total / 999) * 100));
+          shipFill.style.width = `${pct}%`;
+          if (remaining <= 0) {
+            shipFill.classList.add('unlocked');
+            shipText.innerHTML = `🎉 Congratulations! You have unlocked <strong>FREE Shipping</strong>!`;
+          } else {
+            shipFill.classList.remove('unlocked');
+            shipText.innerHTML = `Add <strong>₹${remaining.toFixed(2)}</strong> more to get <strong>FREE Shipping</strong>!`;
+          }
+        }
+      }
+
+      window.addEventListener('cart:updated', syncCartPage);
+      syncCartPage();
+
+      document.getElementById('cartPageWhatsappBtn')?.addEventListener('click', () => {
+        if (window.florealCart) window.florealCart.handleWhatsAppCheckout();
+      });
+    });
+  </script>
+</body>
+</html>
+

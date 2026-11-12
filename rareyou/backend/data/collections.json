@@ -1,0 +1,47 @@
+[
+  {
+    "id": "forever-flower",
+    "name": "Forever Flowers",
+    "handle": "forever-flower",
+    "description": "Everlasting hand-knitted floral bouquets and table arrangements woven with soft milk cotton yarn. Never withers, never fades.",
+    "image": "/images/prod-bumble-in-blue.png",
+    "featured": true,
+    "product_count": 36
+  },
+  {
+    "id": "home-decor",
+    "name": "Home Decor",
+    "handle": "home-decor",
+    "description": "Artisanal sunflower curtain tiebacks, handmade macrame tapestries, and botanical accents that bring warmth to every corner.",
+    "image": "/images/prod-pink-sunflower-curtain-tie.png",
+    "featured": true,
+    "product_count": 36
+  },
+  {
+    "id": "accessories",
+    "name": "Accessories",
+    "handle": "accessories",
+    "description": "Handcrafted crochet tote bags, floral keychains, and everyday bohemian lifestyle accessories made with natural yarns.",
+    "image": "/images/prod-convertible-sunflower-doll.png",
+    "featured": true,
+    "product_count": 21
+  },
+  {
+    "id": "clothing",
+    "name": "Clothing",
+    "handle": "clothing",
+    "description": "Pure hand-loomed breathable cotton and linen artisanal dresses tailored with care and custom sizing available.",
+    "image": "/images/prod-delicate-tulips.jpg",
+    "featured": true,
+    "product_count": 14
+  },
+  {
+    "id": "kids",
+    "name": "Kids",
+    "handle": "swings",
+    "description": "Hand-knotted bohemian baby swings, nursery hanging cribs, and hypoallergenic organic cotton companions.",
+    "image": "/images/prod-sunshine-in-a-bouquet.jpg",
+    "featured": true,
+    "product_count": 14
+  }
+]

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Floreal | Handcrafted Forever Flowers & Bouquets | As Seen on Shark Tank India</title>
+  <meta name="description" content="India's favorite handcrafted forever flowers. Discover eternal crochet flower bouquets, potted plants, and plush characters that never wilt.">
+  <link rel="icon" type="image/webp" href="http://localhost:5000/images/favicon-16x16_3_32x32.webp">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Announcement Marquee Bar
+       ========================================================================== -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+      <span>🌸 100% Handcrafted Forever Flowers — Never Fade</span>
+      <span>🚚 FREE Shipping on Orders Above ₹999</span>
+      <span>💝 Handcrafted with Love by Women Artisans</span>
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+      <span>🌸 100% Handcrafted Forever Flowers — Never Fade</span>
+      <span>🚚 FREE Shipping on Orders Above ₹999</span>
+      <span>💝 Handcrafted with Love by Women Artisans</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Site Header
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <button type="button" class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a href="index.html" class="header-logo">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="120" height="57">
+        </a>
+      </div>
+
+      <nav class="main-navigation" id="mainNav">
+        <a href="index.html" class="active">Home</a>
+        <a href="collections.html">All Collections</a>
+        <a href="collections.html?c=bouquets">Bouquets</a>
+        <a href="collections.html?c=pots">Pots & Plants</a>
+        <a href="collections.html?c=characters">Characters</a>
+        <a href="collections.html?c=plushie">Plushies</a>
+        <a href="about.html">Our Story</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <!-- Search Trigger -->
+        <button type="button" class="header-action-btn" data-search-toggle aria-label="Search Catalog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <!-- Wishlist Link -->
+        <a href="wishlist.html" class="header-action-btn" aria-label="Saved Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="wishlist-count-badge" style="display: none;">0</span>
+        </a>
+
+        <!-- Account Link -->
+        <a href="account.html" class="header-action-btn" aria-label="Customer Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button type="button" class="header-action-btn" data-cart-toggle aria-label="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Hero Banner
+         ========================================================================== -->
+    <section class="hero-section">
+      <a href="collections.html" class="hero-banner-link">
+        <picture>
+          <source media="(max-width: 768px)" srcset="http://localhost:5000/images/Mobile.webp">
+          <img src="http://localhost:5000/images/Web_4.webp" alt="Floreal Forever Flowers - Handmade Crochet Bouquets" width="1920" height="750" loading="eager">
+        </picture>
+      </a>
+    </section>
+
+    <!-- ==========================================================================
+         Category Stories / Circular Collections
+         ========================================================================== -->
+    <section class="category-stories-section">
+      <div class="container">
+        <div class="stories-carousel" id="storiesCarousel">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Trust & Value Propositions Bar
+         ========================================================================== -->
+    <section class="trust-bar-section">
+      <div class="container">
+        <div class="trust-bar-grid">
+          <div class="trust-item">
+            <div class="trust-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <div class="trust-item-text">
+              <h4>100% Handcrafted</h4>
+              <p>Hand-knitted with premium eco-friendly crochet yarn</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="trust-item-text">
+              <h4>Never Wilts</h4>
+              <p>Forever flowers that preserve your memories for eternity</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="trust-item-text">
+              <h4>Free Pan-India Delivery</h4>
+              <p>Complimentary express shipping on orders over ₹999</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><circle cx="18" cy="16" r="2"/></svg>
+            </div>
+            <div class="trust-item-text">
+              <h4>Direct Customer Care</h4>
+              <p>Personalized WhatsApp order tracking & artisan support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Shark Tank India Spotlight Section
+         ========================================================================== -->
+    <div class="container">
+      <section class="sharktank-section">
+        <div class="container sharktank-inner">
+          <div class="sharktank-text">
+            <div class="sharktank-badge">
+              <span>🦈 Shark Tank India Season 5 Brand</span>
+            </div>
+            <h2>Handmade Love Featured On National Television</h2>
+            <p>Every petal, stem, and bloom from Floreal is lovingly crafted by skilled women artisans across India. Discover why millions of gift-givers choose forever flowers.</p>
+          </div>
+          <a href="collections.html" class="btn-start-shopping">Explore Featured Blooms →</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==========================================================================
+         Main Product Catalog Section
+         ========================================================================== -->
+    <section class="catalog-section" id="catalog">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Forever Handcrafted Floral Collection</div>
+          <h2 class="section-title">Explore Best Selling Blooms</h2>
+        </div>
+
+        <!-- Filter & Sorting Bar -->
+        <div class="catalog-filter-bar">
+          <div class="filter-categories">
+            <button type="button" class="filter-pill active" data-category="all">All Blooms</button>
+            <button type="button" class="filter-pill" data-category="Bouquets">Bouquets</button>
+            <button type="button" class="filter-pill" data-category="pots">Potted Blooms</button>
+            <button type="button" class="filter-pill" data-category="Characters">Characters</button>
+            <button type="button" class="filter-pill" data-category="plushie">Plushies</button>
+            <button type="button" class="filter-pill" data-category="gift box">Gift Boxes</button>
+            <button type="button" class="filter-pill" data-category="basket">Baskets</button>
+          </div>
+
+          <div class="catalog-sort">
+            <select id="catalogSortSelect" aria-label="Sort products">
+              <option value="featured">Featured First</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="discount">Biggest Discount</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Populated dynamically with 131 real products via app.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+          <button type="button" class="btn-start-shopping" id="loadMoreProductsBtn">Load More Blooms</button>
+          <a href="collections.html" class="btn btn-outline" style="margin-left: 12px;">View All 25 Collections →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="110" height="50" style="filter: brightness(0) invert(1); margin-bottom: 16px;">
+          <p>Floreal is India's leading handcrafted floral brand. We craft eternal crochet and chenille flowers that stay fresh and vibrant forever, celebrating everyday moments and milestones.</p>
+          <p style="color: #ffffff; font-weight: 600;">As Seen on Shark Tank India Season 5</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul class="footer-links">
+            <li><a href="collections.html?c=bouquets">Single Flowers & Roses</a></li>
+            <li><a href="collections.html?c=pots">Potted Flowers & Plants</a></li>
+            <li><a href="collections.html?c=characters">Character Bouquets</a></li>
+            <li><a href="collections.html?c=gift-box">Curated Gift Boxes</a></li>
+            <li><a href="collections.html?c=baskets">Handwoven Baskets</a></li>
+            <li><a href="collections.html">Browse All 25 Collections</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="track-order.html">Track Your Order</a></li>
+            <li><a href="shipping-policy.html">Shipping & Delivery</a></li>
+            <li><a href="returns-policy.html">Packaging & Replacement</a></li>
+            <li><a href="care-guide.html">Crochet Flower Care Guide</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="admin.html">Artisan Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <p>Subscribe to receive exclusive drops, secret discount codes, and new forever flower arrivals.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Floreal VIP Club! Use code SHARKTANK10 for 10% off.'); this.reset();">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address">
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Floreal Inc. All Rights Reserved. Pure-Code D2C Storefront.</div>
+        <div>Made with ❤️ for Handcrafted Floral Artistry</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Interactive Drawers & Modals
+       ========================================================================== -->
+  <!-- Backdrop Overlay -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Slide-out Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Your Bag
+      </h3>
+      <button type="button" class="cart-drawer-close" id="cartDrawerClose" aria-label="Close Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Free Shipping Meter -->
+    <div class="free-shipping-container">
+      <div class="shipping-progress-text" id="freeShippingText">
+        Add <strong>₹999.00</strong> more to get <strong>FREE Shipping</strong>!
+      </div>
+      <div class="shipping-progress-bar-bg">
+        <div class="shipping-progress-fill" id="freeShippingFill"></div>
+      </div>
+    </div>
+
+    <!-- Cart Body -->
+    <div class="cart-drawer-body">
+      <div id="cartEmptyView" class="cart-empty-view">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Your flower bag is currently empty.</p>
+        <button type="button" class="btn-start-shopping" onclick="window.florealCart && window.florealCart.close()">Browse Forever Flowers</button>
+      </div>
+
+      <div id="cartItemsList" class="cart-items-list" style="display: none;">
+        <!-- Populated dynamically by cart.js -->
+      </div>
+    </div>
+
+    <!-- Cart Footer -->
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal:</span>
+        <span class="cart-subtotal-value" id="cartSubtotalValue">₹0.00</span>
+      </div>
+      <p class="cart-shipping-note">Free shipping on orders above ₹999. Taxes included.</p>
+      <button type="button" class="btn-cart-checkout" id="cartCheckoutBtn">Proceed to Checkout →</button>
+      <button type="button" class="btn btn-whatsapp btn-full" id="cartWhatsappBtn" style="margin-top: 8px;">Order via WhatsApp 💬</button>
+      <div style="text-align: center; margin-top: 10px;">
+        <a href="cart.html" style="font-size: 12px; color: var(--color-text-muted); text-decoration: underline;">View Full Bag Page</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Predictive Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="searchInput" placeholder="Search forever flowers, bouquets, pots, plushies..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn" aria-label="Close Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="search-results-list" id="searchResultsList">
+        <!-- Live search matches populated by search.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="quickview-modal" id="quickViewModal">
+    <button type="button" class="quickview-close-btn" id="quickViewCloseBtn" aria-label="Close Quick View">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="quickview-gallery">
+      <img src="" alt="" class="quickview-main-img" id="quickViewImg">
+    </div>
+    <div class="quickview-details">
+      <span class="quickview-category" id="quickViewCategory">Bouquets</span>
+      <h2 class="quickview-title" id="quickViewTitle">Product Title</h2>
+      <div class="quickview-price-wrap">
+        <span class="quickview-price" id="quickViewPrice">₹0.00</span>
+        <span class="quickview-compare" id="quickViewCompare">₹0.00</span>
+      </div>
+      <p class="quickview-description" id="quickViewDesc">Product description goes here.</p>
+      <div class="quickview-actions">
+        <div class="qty-stepper">
+          <button type="button" class="qty-btn" id="quickViewMinus">-</button>
+          <span class="qty-value" id="quickViewQty">1</span>
+          <button type="button" class="qty-btn" id="quickViewPlus">+</button>
+        </div>
+        <button type="button" class="btn-quickview-add" id="quickViewAddBtn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Proof Live Purchase Toast (halo-someone-purchase) -->
+  <div class="social-proof-toast" id="socialProofToast">
+    <button type="button" class="social-proof-close" id="socialProofClose" aria-label="Dismiss">✕</button>
+    <img src="" alt="Purchased item" class="social-proof-img" id="socialProofImg">
+    <div class="social-proof-content">
+      <p id="socialProofText">Someone in Mumbai just bought Single Rose Bouquet</p>
+      <span id="socialProofTime">2 minutes ago</span>
+    </div>
+  </div>
+
+  <!-- Toast Notification Feedback -->
+  <div class="toast-notice" id="toastNotice"></div>
+
+  <!-- Floating WhatsApp Quick Support FAB -->
+  <a href="https://api.whatsapp.com/send?phone=919876543210&text=Hi%20Floreal!%20I'm%20visiting%20your%20website%20and%20need%20assistance." class="floating-whatsapp-fab" target="_blank" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- ==========================================================================
+       Scripts Execution
+       ========================================================================== -->
+  <script src="assets/data/products-data.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/quickview.js"></script>
+  <script src="assets/js/social-proof.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

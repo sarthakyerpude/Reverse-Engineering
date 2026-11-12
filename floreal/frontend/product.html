@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Forever Bloom Detail | Floreal Handcrafted</title>
+  <meta name="description" content="Handcrafted forever crochet bouquet made by skilled women artisans. Everlasting floral gift that never wilts.">
+  <link rel="icon" type="image/webp" href="http://localhost:5000/images/favicon-16x16_3_32x32.webp">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+      <span>🌸 100% Handcrafted Forever Flowers — Never Fade</span>
+      <span>🚚 FREE Shipping on Orders Above ₹999</span>
+      <span>💝 Handcrafted with Love by Women Artisans</span>
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a href="index.html" class="header-logo">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="120" height="57">
+        </a>
+      </div>
+
+      <nav class="main-navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">All Collections</a>
+        <a href="collections.html?c=bouquets">Bouquets</a>
+        <a href="collections.html?c=pots">Pots & Plants</a>
+        <a href="collections.html?c=characters">Characters</a>
+        <a href="collections.html?c=plushie">Plushies</a>
+        <a href="about.html">Our Story</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <button type="button" class="header-action-btn" data-search-toggle aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="wishlist.html" class="header-action-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="wishlist-count-badge" style="display: none;">0</span>
+        </a>
+        <a href="account.html" class="header-action-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <button type="button" class="header-action-btn" data-cart-toggle aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 20px;">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs" id="pdpBreadcrumbs">
+        <a href="index.html">Home</a> <span>/</span> <a href="collections.html">Collections</a> <span>/</span> <span id="pdpCrumbTitle">Product</span>
+      </div>
+
+      <!-- Main PDP Grid -->
+      <div class="pdp-grid">
+        <!-- Left: Gallery -->
+        <div class="pdp-gallery-wrap">
+          <div class="pdp-thumbs-col" id="pdpThumbsCol">
+            <!-- Populated dynamically -->
+          </div>
+          <div class="pdp-main-image-wrap">
+            <img src="" alt="" id="pdpMainImg" class="pdp-main-img">
+          </div>
+        </div>
+
+        <!-- Right: Info & Purchase Form -->
+        <div class="pdp-info-col">
+          <span class="badge-tag sale" id="pdpBadgeSale" style="display: none;">SALE</span>
+          <span class="product-type" id="pdpCategory">Bouquet</span>
+          <h1 id="pdpTitle">Handcrafted Forever Bloom</h1>
+
+          <div class="pdp-meta-row">
+            <div class="stars" style="color: #ffb800; font-size: 14px;">★★★★★</div>
+            <span style="font-size: 13px; color: #666;" id="pdpReviewCount">(48 Verified Reviews)</span>
+            <span style="font-size: 12px; color: #198754; font-weight: 600;">✓ In Stock (Ready to Ship)</span>
+          </div>
+
+          <div class="pdp-price-row">
+            <span class="pdp-price-current" id="pdpPriceCurrent">₹299.00</span>
+            <span class="pdp-price-compare" id="pdpPriceCompare">₹499.00</span>
+            <span class="pdp-savings-badge" id="pdpSavingsBadge">SAVE 40%</span>
+          </div>
+          <p style="font-size: 12px; color: #777; margin-bottom: 20px;">Inclusive of all taxes. Free Pan-India Delivery on orders over ₹999.</p>
+
+          <!-- Color Swatches -->
+          <div class="variant-picker-section">
+            <div class="variant-picker-title">Select Colorway: <strong id="selectedColorName">Pastel Pink</strong></div>
+            <div class="variant-swatches" id="colorSwatchesContainer">
+              <button type="button" class="color-swatch-btn active" data-color="Pastel Pink" style="background-color: #ffc0cb;" title="Pastel Pink"></button>
+              <button type="button" class="color-swatch-btn" data-color="Crimson Red" style="background-color: #d82b4b;" title="Crimson Red"></button>
+              <button type="button" class="color-swatch-btn" data-color="Lavender" style="background-color: #e6e6fa;" title="Lavender"></button>
+              <button type="button" class="color-swatch-btn" data-color="Sunflower Yellow" style="background-color: #ffeb3b;" title="Sunflower Yellow"></button>
+              <button type="button" class="color-swatch-btn" data-color="Baby Blue" style="background-color: #87ceeb;" title="Baby Blue"></button>
+            </div>
+          </div>
+
+          <!-- Stem Options -->
+          <div class="variant-picker-section">
+            <div class="variant-picker-title">Bouquet Option:</div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="stem-pill-btn active" data-stem="Single Stem">Single Stem</button>
+              <button type="button" class="stem-pill-btn" data-stem="3-Stem Trio">3-Stem Trio (+₹300)</button>
+              <button type="button" class="stem-pill-btn" data-stem="5-Stem Luxury">5-Stem Luxury (+₹600)</button>
+            </div>
+          </div>
+
+          <!-- Quantity & Primary Add to Cart -->
+          <div class="pdp-actions-row">
+            <div class="qty-stepper">
+              <button type="button" class="qty-btn" id="pdpQtyMinus">-</button>
+              <span class="qty-value" id="pdpQtyVal">1</span>
+              <button type="button" class="qty-btn" id="pdpQtyPlus">+</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-add-to-cart" id="pdpAddToCartBtn">
+              Add to Flower Bag 🛍️
+            </button>
+          </div>
+
+          <button type="button" class="btn btn-buy-now" id="pdpBuyNowBtn">
+            Buy It Now (Direct Checkout)
+          </button>
+
+          <button type="button" class="btn btn-whatsapp-pdp" id="pdpWhatsappBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Order via WhatsApp 💬
+          </button>
+
+          <!-- Gifting Add-ons -->
+          <div class="gifting-addons-box">
+            <h4>🎁 Gifting Add-ons & Personalization</h4>
+            <label class="addon-option">
+              <input type="checkbox" id="addonCard">
+              <span>Add Handwritten Personalized Greeting Card (+₹49)</span>
+            </label>
+            <label class="addon-option">
+              <input type="checkbox" id="addonBox">
+              <span>Luxury Gift Box & Ribbon Wrapping (+₹99)</span>
+            </label>
+          </div>
+
+          <!-- Pincode Checker -->
+          <div class="pincode-checker-box">
+            <strong style="font-size: 13px;">🚚 Check Estimated Delivery Time:</strong>
+            <div class="pincode-form">
+              <input type="text" id="pincodeInput" placeholder="Enter 6-digit Indian PIN Code" maxlength="6">
+              <button type="button" class="btn btn-outline btn-sm" id="pincodeCheckBtn">Check</button>
+            </div>
+            <div id="pincodeResult" style="font-size: 12px; margin-top: 6px;"></div>
+          </div>
+
+          <!-- Product Details Accordion -->
+          <div class="pdp-accordions">
+            <div class="pdp-accordion-item">
+              <div class="pdp-accordion-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                <span>🌸 Materials & Handcrafting</span>
+                <span>▾</span>
+              </div>
+              <div class="pdp-accordion-content active">
+                <p>Meticulously hand-crocheted by skilled women artisans using 100% hypoallergenic milk cotton and soft chenille yarn. The stems are crafted with flexible floral wire, allowing you to reshape, bend, or style them inside any vase.</p>
+              </div>
+            </div>
+
+            <div class="pdp-accordion-item">
+              <div class="pdp-accordion-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                <span>📏 Dimensions & Specs</span>
+                <span>▾</span>
+              </div>
+              <div class="pdp-accordion-content">
+                <p>Stem Length: approx. 35 cm (14 inches). Flower Bloom Diameter: approx. 8–10 cm. Fits standard ceramic, glass, and wicker vases.</p>
+              </div>
+            </div>
+
+            <div class="pdp-accordion-item">
+              <div class="pdp-accordion-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                <span>✨ Forever Flower Care Guide</span>
+                <span>▾</span>
+              </div>
+              <div class="pdp-accordion-content">
+                <p>Zero watering required! To keep your blooms fresh forever, gently dust with a soft makeup brush or a hair dryer on cool setting once every few weeks. Keep away from direct soaking water.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Customer Reviews Section -->
+      <section style="margin-top: 50px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
+          <div>
+            <h2 style="font-size: 20px; margin: 0 0 6px 0;">Customer Reviews & Ratings</h2>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span id="reviewsAvgRating" style="font-size: 24px; font-weight: 800; color: #1e293b;">5.0</span>
+              <span style="color: #f59e0b; font-size: 18px;">★★★★★</span>
+              <span id="reviewsTotalCount" style="color: #64748b; font-size: 13px;">Verified Artisan Reviews</span>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm" id="toggleWriteReviewBtn">✍️ Write a Review</button>
+        </div>
+
+        <!-- Write Review Form (Collapsible) -->
+        <div id="writeReviewFormWrapper" style="display: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+          <h4 style="margin: 0 0 12px 0;">Share your experience with this bouquet</h4>
+          <form id="writeReviewForm">
+            <div style="margin-bottom: 12px;">
+              <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px;">Your Rating</label>
+              <select id="reviewRatingInput" style="padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;">
+                <option value="5">★★★★★ 5 Stars (Loved it!)</option>
+                <option value="4">★★★★☆ 4 Stars (Very good)</option>
+                <option value="3">★★★☆☆ 3 Stars (Average)</option>
+                <option value="2">★★☆☆☆ 2 Stars (Needs improvement)</option>
+                <option value="1">★☆☆☆☆ 1 Star (Disappointed)</option>
+              </select>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px;">Review Headline</label>
+              <input type="text" id="reviewTitleInput" placeholder="e.g. Gorgeous craftsmanship, looks real!" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 12px;">
+              <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px;">Review Feedback *</label>
+              <textarea id="reviewCommentInput" rows="3" required placeholder="Tell other flower lovers about yarn quality, shipping, packaging..." style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: inherit;"></textarea>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button type="submit" class="btn btn-primary btn-sm">Submit Review</button>
+              <button type="button" class="btn btn-outline btn-sm" id="cancelReviewBtn">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="productReviewsList" style="display: flex; flex-direction: column; gap: 16px;">
+          <!-- Populated from API -->
+        </div>
+      </section>
+
+      <!-- Related Products Section -->
+      <section style="margin-top: 50px; margin-bottom: 60px;">
+        <h2 style="font-size: 22px; margin-bottom: 24px; text-align: center;">You May Also Love</h2>
+        <div class="products-grid" id="relatedProductsGrid">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="110" height="50" style="filter: brightness(0) invert(1); margin-bottom: 16px;">
+          <p>Floreal is India's favorite handcrafted floral brand. Permanent crochet flower bouquets that preserve emotional memories eternity.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="track-order.html">Track Your Order</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="returns-policy.html">Replacement Guarantee</a></li>
+            <li><a href="care-guide.html">Care Instructions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Artisan Studio</h4>
+          <p>Need custom colorways or bulk wedding favors? WhatsApp us directly:</p>
+          <a href="https://api.whatsapp.com/send?phone=919876543210" class="btn btn-whatsapp btn-sm" target="_blank">Chat with Artisan Lead</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Floreal Inc. Handcrafted Forever Blooms.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Drawers & Modals -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Bag</h3>
+      <button type="button" class="cart-drawer-close" id="cartDrawerClose">✕</button>
+    </div>
+    <div class="free-shipping-container">
+      <div class="shipping-progress-text" id="freeShippingText">Add <strong>₹999</strong> for Free Shipping!</div>
+      <div class="shipping-progress-bar-bg"><div class="shipping-progress-fill" id="freeShippingFill"></div></div>
+    </div>
+    <div class="cart-drawer-body">
+      <div id="cartEmptyView" class="cart-empty-view"><p>Your bag is empty.</p></div>
+      <div id="cartItemsList" class="cart-items-list" style="display: none;"></div>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span>Subtotal:</span><span id="cartSubtotalValue">₹0.00</span></div>
+      <button type="button" class="btn-cart-checkout" id="cartCheckoutBtn">Proceed to Checkout →</button>
+      <button type="button" class="btn btn-whatsapp btn-full" id="cartWhatsappBtn" style="margin-top: 8px;">Order via WhatsApp 💬</button>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="searchInput" placeholder="Search forever flowers..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn">✕</button>
+      </div>
+      <div class="search-results-list" id="searchResultsList"></div>
+    </div>
+  </div>
+
+  <div class="toast-notice" id="toastNotice"></div>
+
+  <!-- Scripts -->
+  <script src="assets/data/products-data.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      let catalog = window.FLOREAL_CATALOG;
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get('id');
+
+      let currentProduct = null;
+
+      // Try fetching product directly from backend server API
+      if (productId) {
+        try {
+          const res = await fetch(`http://localhost:5000/api/products/${productId}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.product) {
+              const p = data.product;
+              currentProduct = {
+                id: p.id,
+                title: p.title,
+                handle: p.handle,
+                price: parseFloat(p.variants?.[0]?.price || p.price || 0),
+                compareAtPrice: p.variants?.[0]?.compare_at_price ? parseFloat(p.variants[0].compare_at_price) : null,
+                isSale: (p.variants?.[0]?.compare_at_price > p.variants?.[0]?.price),
+                discountPercent: (p.variants?.[0]?.compare_at_price ? Math.round((1 - p.variants[0].price / p.variants[0].compare_at_price) * 100) : 0),
+                image: typeof p.image === 'string' ? p.image : (p.image?.src || p.images?.[0]?.src || ''),
+                images: Array.isArray(p.images) ? p.images.map(img => typeof img === 'string' ? img : img.src) : [],
+                category: p.product_type || 'Bouquets',
+                tags: Array.isArray(p.tags) ? p.tags : (p.tags ? p.tags.split(', ') : []),
+                description: p.body_html || '',
+                variants: p.variants || [],
+                options: p.options || []
+              };
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (!currentProduct && catalog) {
+        currentProduct = catalog.products.find(p => String(p.id) === String(productId)) || catalog.products[0];
+      }
+
+      if (!currentProduct) return;
+
+      let selectedQty = 1;
+      let selectedColor = 'Pastel Pink';
+      let selectedStem = 'Single Stem';
+
+      // Update DOM
+      document.title = `${currentProduct.title} | Floreal Handcrafted Forever Flowers`;
+      document.getElementById('pdpCrumbTitle').textContent = currentProduct.title;
+      document.getElementById('pdpCategory').textContent = currentProduct.category || 'Handcrafted Bloom';
+      document.getElementById('pdpTitle').textContent = currentProduct.title;
+      document.getElementById('pdpPriceCurrent').textContent = `₹${currentProduct.price.toFixed(2)}`;
+      
+      if (currentProduct.compareAtPrice && currentProduct.compareAtPrice > currentProduct.price) {
+        document.getElementById('pdpPriceCompare').textContent = `₹${currentProduct.compareAtPrice.toFixed(2)}`;
+        document.getElementById('pdpSavingsBadge').textContent = `SAVE ${currentProduct.discountPercent || 40}%`;
+      } else {
+        document.getElementById('pdpPriceCompare').style.display = 'none';
+        document.getElementById('pdpSavingsBadge').style.display = 'none';
+      }
+
+      const mainImg = document.getElementById('pdpMainImg');
+      mainImg.src = currentProduct.image;
+      mainImg.alt = currentProduct.title;
+
+      // Populate Thumbs
+      const thumbsCol = document.getElementById('pdpThumbsCol');
+      const gallery = currentProduct.images && currentProduct.images.length > 0 ? currentProduct.images : [currentProduct.image];
+      thumbsCol.innerHTML = gallery.slice(0, 4).map((imgUrl, i) => `
+        <img src="${imgUrl}" class="pdp-thumb ${i === 0 ? 'active' : ''}" alt="Thumbnail ${i+1}">
+      `).join('');
+
+      thumbsCol.querySelectorAll('.pdp-thumb').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          thumbsCol.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          mainImg.src = thumb.src;
+        });
+      });
+
+      // Quantity controls
+      const qtyVal = document.getElementById('pdpQtyVal');
+      document.getElementById('pdpQtyMinus').addEventListener('click', () => {
+        if (selectedQty > 1) {
+          selectedQty--;
+          qtyVal.textContent = selectedQty;
+        }
+      });
+      document.getElementById('pdpQtyPlus').addEventListener('click', () => {
+        selectedQty++;
+        qtyVal.textContent = selectedQty;
+      });
+
+      // Color Swatches
+      const colorContainer = document.getElementById('colorSwatchesContainer');
+      const selectedColorText = document.getElementById('selectedColorName');
+      colorContainer.querySelectorAll('.color-swatch-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          colorContainer.querySelectorAll('.color-swatch-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedColor = btn.dataset.color;
+          if (selectedColorText) selectedColorText.textContent = selectedColor;
+        });
+      });
+
+      // Stem Pills
+      document.querySelectorAll('.stem-pill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.stem-pill-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedStem = btn.dataset.stem;
+        });
+      });
+
+      // Add to Cart
+      document.getElementById('pdpAddToCartBtn').addEventListener('click', () => {
+        const itemToAdd = {
+          ...currentProduct,
+          title: `${currentProduct.title} (${selectedColor}, ${selectedStem})`
+        };
+        if (window.florealCart) {
+          window.florealCart.addItem(itemToAdd, selectedQty);
+        }
+      });
+
+      // Buy It Now -> Add & go straight to checkout.html
+      document.getElementById('pdpBuyNowBtn').addEventListener('click', () => {
+        const itemToAdd = {
+          ...currentProduct,
+          title: `${currentProduct.title} (${selectedColor}, ${selectedStem})`
+        };
+        if (window.florealCart) {
+          window.florealCart.addItem(itemToAdd, selectedQty);
+          window.location.href = 'checkout.html';
+        }
+      });
+
+      // WhatsApp Order
+      document.getElementById('pdpWhatsappBtn').addEventListener('click', () => {
+        const msg = `🌸 *ENQUIRY ABOUT ${currentProduct.title.toUpperCase()}* 🌸\n\nColorway: ${selectedColor}\nOption: ${selectedStem}\nQuantity: ${selectedQty}\nPrice: ₹${(currentProduct.price * selectedQty).toFixed(2)}\n\nPlease let me know if this can be crafted and delivered to my location!`;
+        window.open(`https://api.whatsapp.com/send?phone=919876543210&text=${encodeURIComponent(msg)}`, '_blank');
+      });
+
+      // Pincode Checker
+      document.getElementById('pincodeCheckBtn').addEventListener('click', () => {
+        const pin = document.getElementById('pincodeInput').value.trim();
+        const resEl = document.getElementById('pincodeResult');
+        if (pin.length === 6 && /^\d+$/.test(pin)) {
+          resEl.innerHTML = `<span style="color: #198754; font-weight: 600;">✓ Express Courier delivery available to ${pin} in 3–5 business days!</span>`;
+        } else {
+          resEl.innerHTML = `<span style="color: #d82b4b;">Please enter a valid 6-digit Indian PIN code.</span>`;
+        }
+      });
+
+      // Related products
+      const relatedGrid = document.getElementById('relatedProductsGrid');
+      const related = catalog.products.filter(p => String(p.id) !== String(currentProduct.id)).slice(0, 4);
+      relatedGrid.innerHTML = related.map(p => `
+        <div class="product-card" data-product-id="${p.id}">
+          <div class="product-image-container">
+            <a href="product.html?id=${p.id}"><img src="${p.image}" alt="${p.title}" loading="lazy"></a>
+            <div class="card-action-overlay">
+              <a href="product.html?id=${p.id}" class="btn-card-quickadd">View Bouquet</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-type">${p.category}</span>
+            <h3 class="product-title"><a href="product.html?id=${p.id}">${p.title}</a></h3>
+            <div class="product-price-row">
+              <span class="price-current">₹${p.price.toFixed(2)}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // ─── REVIEWS ENGINE ───
+      const reviewsList = document.getElementById('productReviewsList');
+      const toggleReviewBtn = document.getElementById('toggleWriteReviewBtn');
+      const reviewWrapper = document.getElementById('writeReviewFormWrapper');
+      const cancelRevBtn = document.getElementById('cancelReviewBtn');
+      const reviewForm = document.getElementById('writeReviewForm');
+
+      async function loadReviews() {
+        try {
+          const res = await fetch(`http://localhost:5000/api/reviews/${currentProduct.id}`);
+          if (res.ok) {
+            const data = await res.json();
+            const list = data.reviews || [];
+            const stats = data.stats || { average: 5.0, total: 0 };
+
+            document.getElementById('reviewsAvgRating').textContent = stats.average.toFixed(1);
+            document.getElementById('reviewsTotalCount').textContent = `Based on ${stats.total > 0 ? stats.total : 1} verified review${stats.total === 1 ? '' : 's'}`;
+
+            if (list.length === 0) {
+              reviewsList.innerHTML = `
+                <div style="background: #f8fafc; border-radius: 8px; padding: 16px; border: 1px solid #e2e8f0;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <div>
+                      <span style="color: #f59e0b;">★★★★★</span>
+                      <strong style="margin-left: 8px; font-size: 14px;">Ananya Sen</strong>
+                      <span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-left: 6px;">Verified Buyer ✓</span>
+                    </div>
+                    <small style="color: #94a3b8; font-size: 11px;">2 days ago</small>
+                  </div>
+                  <h4 style="margin: 0 0 4px 0; font-size: 14px; color: #1e293b;">Breathtaking crochet work!</h4>
+                  <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">The petals are soft and so realistic. Bought this as an anniversary gift and she absolutely adored it! Will definitely order more flowers.</p>
+                </div>
+              `;
+            } else {
+              reviewsList.innerHTML = list.map(r => `
+                <div style="background: #f8fafc; border-radius: 8px; padding: 16px; border: 1px solid #e2e8f0;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <div>
+                      <span style="color: #f59e0b;">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>
+                      <strong style="margin-left: 8px; font-size: 14px;">${r.user_name}</strong>
+                      <span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-left: 6px;">Verified Buyer ✓</span>
+                    </div>
+                    <small style="color: #94a3b8; font-size: 11px;">${new Date(r.created_at).toLocaleDateString()}</small>
+                  </div>
+                  ${r.title ? `<h4 style="margin: 0 0 4px 0; font-size: 14px; color: #1e293b;">${r.title}</h4>` : ''}
+                  <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">${r.comment}</p>
+                </div>
+              `).join('');
+            }
+          }
+        } catch (e) {
+          console.warn('Reviews fetch error:', e);
+        }
+      }
+
+      loadReviews();
+
+      if (toggleReviewBtn && reviewWrapper) {
+        toggleReviewBtn.addEventListener('click', () => {
+          if (!window.FlorealAuth || !window.FlorealAuth.isLoggedIn()) {
+            window.FlorealAuth.openModal('login');
+            return;
+          }
+          reviewWrapper.style.display = reviewWrapper.style.display === 'none' ? 'block' : 'none';
+        });
+      }
+
+      if (cancelRevBtn && reviewWrapper) {
+        cancelRevBtn.addEventListener('click', () => {
+          reviewWrapper.style.display = 'none';
+        });
+      }
+
+      if (reviewForm) {
+        reviewForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (!window.FlorealAuth || !window.FlorealAuth.isLoggedIn()) {
+            window.FlorealAuth.openModal('login');
+            return;
+          }
+
+          const rating = document.getElementById('reviewRatingInput').value;
+          const title = document.getElementById('reviewTitleInput').value.trim();
+          const comment = document.getElementById('reviewCommentInput').value.trim();
+
+          try {
+            const res = await window.FlorealAuth.authFetch(`http://localhost:5000/api/reviews/${currentProduct.id}`, {
+              method: 'POST',
+              body: JSON.stringify({ rating, title, comment })
+            });
+
+            if (res.ok) {
+              reviewForm.reset();
+              reviewWrapper.style.display = 'none';
+              loadReviews();
+              alert('Thank you! Your review has been saved to the database. 🌸');
+            } else {
+              const err = await res.json();
+              alert(err.error || 'Failed to post review.');
+            }
+          } catch (err) {
+            alert('Error posting review: ' + err.message);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

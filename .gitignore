@@ -1,0 +1,56 @@
+# Root .gitignore for Reverse-Engineering Repository
+
+# Dependencies across all workspaces
+node_modules/
+**/node_modules/
+
+# Production build outputs
+dist/
+**/dist/
+build/
+**/build/
+
+# Environment and sensitive keys
+.env
+**/.env
+.env.local
+.env.*.local
+
+# Database temporary & WAL files
+*.sqlite-wal
+*.sqlite-shm
+**/*.sqlite-wal
+**/*.sqlite-shm
+
+# Analysis dumps & scraping outputs (>100MB)
+output/
+rea/
+.docs/
+
+# Internal project documentation (confidential)
+project-docs/
+**/project-docs/
+rareyou/project-docs/
+floreal/project-docs/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+

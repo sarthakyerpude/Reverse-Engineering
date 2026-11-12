@@ -1,0 +1,339 @@
+{
+  "collections": [
+    {
+      "id": 292293542025,
+      "title": "Addons",
+      "handle": "addons",
+      "description": "<p>Addons</p>\n<!---->",
+      "published_at": "2024-07-28T17:43:23+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": {
+        "id": 1612696682633,
+        "created_at": "2024-08-01T21:21:43+05:30",
+        "src": "http://localhost:5000/images/IMG_7234_8_11zon_16_11zon.webp",
+        "alt": null
+      },
+      "products_count": 8
+    },
+    {
+      "id": 300100780169,
+      "title": "All Products",
+      "handle": "all-products",
+      "description": "",
+      "published_at": "2025-02-12T13:36:58+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": null,
+      "products_count": 120
+    },
+    {
+      "id": 295485767817,
+      "title": "Baskets",
+      "handle": "baskets",
+      "description": "",
+      "published_at": "2024-10-18T18:47:16+05:30",
+      "updated_at": "2026-10-22T16:49:00+05:30",
+      "image": {
+        "id": 1613426294921,
+        "created_at": "2024-10-18T18:47:15+05:30",
+        "src": "http://localhost:5000/images/IMG_0019_11_11zon.webp",
+        "alt": null
+      },
+      "products_count": 9
+    },
+    {
+      "id": 292496572553,
+      "title": "Best Sellers",
+      "handle": "best-selleres",
+      "description": "",
+      "published_at": "2024-08-01T07:27:11+05:30",
+      "updated_at": "2026-11-09T17:45:21+05:30",
+      "image": null,
+      "products_count": 26
+    },
+    {
+      "id": 324397891721,
+      "title": "Bundles",
+      "handle": "bundles",
+      "description": null,
+      "published_at": "2026-07-11T13:59:05+05:30",
+      "updated_at": "2026-11-09T17:45:21+05:30",
+      "image": null,
+      "products_count": 3
+    },
+    {
+      "id": 292126457993,
+      "title": "Characters",
+      "handle": "characters",
+      "description": "<p>Characters<br></p>\n<!---->",
+      "published_at": "2024-07-24T19:55:06+05:30",
+      "updated_at": "2026-11-08T17:47:04+05:30",
+      "image": {
+        "id": 1612651724937,
+        "created_at": "2024-07-27T13:14:43+05:30",
+        "src": "http://localhost:5000/images/3_batman_2.webp",
+        "alt": null
+      },
+      "products_count": 4
+    },
+    {
+      "id": 292126392457,
+      "title": "Combos",
+      "handle": "set-of-3",
+      "description": "<p>Combos<br></p>\n<!---->",
+      "published_at": "2024-07-24T19:54:30+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": {
+        "id": 1612651790473,
+        "created_at": "2024-07-27T13:15:27+05:30",
+        "src": "http://localhost:5000/images/Mini_tulip_set_of_3.webp",
+        "alt": null
+      },
+      "products_count": 16
+    },
+    {
+      "id": 292126359689,
+      "title": "Double Flower",
+      "handle": "double-flower-bouquets",
+      "description": "<p>Double Flower Bouquets<br></p>\n<!---->",
+      "published_at": "2024-07-24T19:54:13+05:30",
+      "updated_at": "2026-11-07T17:46:55+05:30",
+      "image": {
+        "id": 1612677382281,
+        "created_at": "2024-07-30T19:46:09+05:30",
+        "src": "http://localhost:5000/images/2_sunflower_bouquet_2.webp",
+        "alt": null
+      },
+      "products_count": 9
+    },
+    {
+      "id": 311597465737,
+      "title": "Earrings",
+      "handle": "jewellery-all-products",
+      "description": "",
+      "published_at": "2025-11-17T13:11:29+05:30",
+      "updated_at": "2026-06-15T15:04:59+05:30",
+      "image": {
+        "id": 1618044649609,
+        "created_at": "2026-02-01T14:42:49+05:30",
+        "src": "http://localhost:5000/images/5.webp",
+        "alt": null
+      },
+      "products_count": 22
+    },
+    {
+      "id": 320026411145,
+      "title": "Floreal Products",
+      "handle": "floreal-products",
+      "description": "",
+      "published_at": "2026-04-21T16:51:41+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": null,
+      "products_count": 148
+    },
+    {
+      "id": 303174680713,
+      "title": "Gift Box",
+      "handle": "gift-box",
+      "description": "",
+      "published_at": "2025-04-18T10:52:12+05:30",
+      "updated_at": "2026-11-07T17:46:55+05:30",
+      "image": {
+        "id": 1615605825673,
+        "created_at": "2025-04-18T10:56:54+05:30",
+        "src": "http://localhost:5000/images/photo-output_1__11zon_1.webp",
+        "alt": null
+      },
+      "products_count": 12
+    },
+    {
+      "id": 321766588553,
+      "title": "Hair Accessories",
+      "handle": "hair-accessories",
+      "description": null,
+      "published_at": "2026-05-11T10:35:05+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": {
+        "id": 1618926272649,
+        "created_at": "2026-05-22T21:46:40+05:30",
+        "src": "http://localhost:5000/images/11_1__1_11zon.webp",
+        "alt": null
+      },
+      "products_count": 17
+    },
+    {
+      "id": 291899605129,
+      "title": "Home page",
+      "handle": "frontpage",
+      "description": null,
+      "published_at": "2024-07-19T16:43:40+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": null,
+      "products_count": 1
+    },
+    {
+      "id": 321862008969,
+      "title": "Jewellery Clearance",
+      "handle": "jewellery-clearance",
+      "description": "<p>Grab our jewellery pieces at clearance prices — limited stock, big savings!</p>",
+      "published_at": "2026-05-13T13:29:21+05:30",
+      "updated_at": "2026-06-15T15:05:15+05:30",
+      "image": null,
+      "products_count": 75
+    },
+    {
+      "id": 292126425225,
+      "title": "Jumbo Bouquets",
+      "handle": "jumbo-bouquets",
+      "description": "<p>Jumbo Bouquets<br></p>\n<!---->",
+      "published_at": "2024-07-24T19:54:51+05:30",
+      "updated_at": "2026-11-04T17:44:46+05:30",
+      "image": {
+        "id": 1612651757705,
+        "created_at": "2024-07-27T13:15:09+05:30",
+        "src": "http://localhost:5000/images/10_11zon.webp",
+        "alt": null
+      },
+      "products_count": 23
+    },
+    {
+      "id": 292293509257,
+      "title": "Keychains",
+      "handle": "keychains",
+      "description": "<p>Keychains</p>\n<!---->",
+      "published_at": "2024-07-28T17:42:52+05:30",
+      "updated_at": "2026-10-09T22:48:21+05:30",
+      "image": {
+        "id": 1612696551561,
+        "created_at": "2024-08-01T20:43:30+05:30",
+        "src": "http://localhost:5000/images/IMG_7259_14_11zon_3_11zon.webp",
+        "alt": null
+      },
+      "products_count": 12
+    },
+    {
+      "id": 321607565449,
+      "title": "Luxury Bundles",
+      "handle": "luxury-bundles",
+      "description": "",
+      "published_at": "2026-05-06T20:33:55+05:30",
+      "updated_at": "2026-06-03T03:11:22+05:30",
+      "image": null,
+      "products_count": 1
+    },
+    {
+      "id": 292126556297,
+      "title": "Minis",
+      "handle": "minis",
+      "description": "<p>Minis<br></p>\n<!---->",
+      "published_at": "2024-07-24T19:55:33+05:30",
+      "updated_at": "2026-11-03T17:44:26+05:30",
+      "image": {
+        "id": 1612651659401,
+        "created_at": "2024-07-27T13:13:40+05:30",
+        "src": "http://localhost:5000/images/Mini_everything.webp",
+        "alt": null
+      },
+      "products_count": 11
+    },
+    {
+      "id": 323224797321,
+      "title": "Necklace",
+      "handle": "earrings-copy",
+      "description": "",
+      "published_at": "2026-06-12T21:08:21+05:30",
+      "updated_at": "2026-06-15T15:05:15+05:30",
+      "image": {
+        "id": 1619106267273,
+        "created_at": "2026-06-12T21:00:25+05:30",
+        "src": "http://localhost:5000/images/5_d80a4257-0eff-423b-9f4f-8b8d21607b01.webp",
+        "alt": null
+      },
+      "products_count": 23
+    },
+    {
+      "id": 297342468233,
+      "title": "Plushie",
+      "handle": "plushie",
+      "description": "",
+      "published_at": "2024-12-07T21:30:40+05:30",
+      "updated_at": "2026-11-03T17:44:26+05:30",
+      "image": {
+        "id": 1614051344521,
+        "created_at": "2024-12-07T21:30:39+05:30",
+        "src": "http://localhost:5000/images/IMG_2009_7_11zon_8_11zon.webp",
+        "alt": null
+      },
+      "products_count": 4
+    },
+    {
+      "id": 292126523529,
+      "title": "Pots",
+      "handle": "pots",
+      "description": "<p>Pots<br></p>\n<!---->",
+      "published_at": "2024-07-24T19:55:18+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": {
+        "id": 1612651692169,
+        "created_at": "2024-07-27T13:14:21+05:30",
+        "src": "http://localhost:5000/images/Rose_pot.webp",
+        "alt": ""
+      },
+      "products_count": 11
+    },
+    {
+      "id": 314992525449,
+      "title": "Premium Blooms",
+      "handle": "premium-blooms",
+      "description": "",
+      "published_at": "2026-02-01T13:02:23+05:30",
+      "updated_at": "2026-09-24T17:05:46+05:30",
+      "image": null,
+      "products_count": 5
+    },
+    {
+      "id": 292126294153,
+      "title": "Single Flower",
+      "handle": "single-flower-bouquets",
+      "description": "<p>Single Flower Bouquets</p>",
+      "published_at": "2024-07-24T19:53:38+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": {
+        "id": 1612677316745,
+        "created_at": "2024-07-30T19:38:59+05:30",
+        "src": "http://localhost:5000/images/2nd.jpg",
+        "alt": null
+      },
+      "products_count": 12
+    },
+    {
+      "id": 325175541897,
+      "title": "Special Collection",
+      "handle": "rakhi-collection",
+      "description": null,
+      "published_at": "2026-07-28T13:03:16+05:30",
+      "updated_at": "2026-11-10T17:45:17+05:30",
+      "image": {
+        "id": 1619503644809,
+        "created_at": "2026-07-28T16:26:04+05:30",
+        "src": "http://localhost:5000/images/IMG_8753_14_11zon_6_11zon.webp",
+        "alt": null
+      },
+      "products_count": 13
+    },
+    {
+      "id": 321373995145,
+      "title": "Stacks",
+      "handle": "stacks",
+      "description": "",
+      "published_at": "2026-04-30T13:41:06+05:30",
+      "updated_at": "2026-06-14T13:07:03+05:30",
+      "image": {
+        "id": 1619106234505,
+        "created_at": "2026-06-12T20:55:58+05:30",
+        "src": "http://localhost:5000/images/IMG_9200.jpg",
+        "alt": null
+      },
+      "products_count": 26
+    }
+  ]
+}

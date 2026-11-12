@@ -1,0 +1,20 @@
+{
+  "name": "rareyou-backend",
+  "version": "1.0.0",
+  "description": "Backend API Server for Rare You E-Commerce Store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test_fullstack.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "uuid": "^14.0.3"
+  }
+}

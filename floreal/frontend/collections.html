@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>All Collections & Forever Blooms | Floreal Handcrafted</title>
+  <meta name="description" content="Browse 25 collections of eternal crochet flower bouquets, single roses, tulips, desk pots, plushies, and gift hampers.">
+  <link rel="icon" type="image/webp" href="http://localhost:5000/images/favicon-16x16_3_32x32.webp">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+      <span>🌸 100% Handcrafted Forever Flowers — Never Fade</span>
+      <span>🚚 FREE Shipping on Orders Above ₹999</span>
+      <span>💝 Handcrafted with Love by Women Artisans</span>
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a href="index.html" class="header-logo">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="120" height="57">
+        </a>
+      </div>
+
+      <nav class="main-navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">All Collections</a>
+        <a href="collections.html?c=bouquets">Bouquets</a>
+        <a href="collections.html?c=pots">Pots & Plants</a>
+        <a href="collections.html?c=characters">Characters</a>
+        <a href="collections.html?c=plushie">Plushies</a>
+        <a href="about.html">Our Story</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <button type="button" class="header-action-btn" data-search-toggle aria-label="Search Catalog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="wishlist.html" class="header-action-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="wishlist-count-badge" style="display: none;">0</span>
+        </a>
+        <a href="account.html" class="header-action-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <button type="button" class="header-action-btn" data-cart-toggle aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a> <span>/</span> <span id="breadcrumbCollectionTitle">Collections</span>
+        </div>
+        <h1 id="pageHeadingTitle">Handcrafted Floral Collections</h1>
+        <p id="pageHeadingDesc">Explore our permanent botanical collection, lovingly hand-knitted with eco-friendly milk cotton yarn.</p>
+      </div>
+    </section>
+
+    <!-- Main Catalog Layout with Filter Sidebar -->
+    <div class="container">
+      <div class="catalog-layout">
+        <!-- Sidebar Filters -->
+        <aside class="filter-sidebar">
+          <div class="filter-group">
+            <h4>Collections</h4>
+            <ul class="filter-list" id="sidebarCollectionList">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <div class="filter-group">
+            <h4>Price Range</h4>
+            <div class="price-slider-wrap">
+              <input type="range" id="priceRangeSlider" min="199" max="4999" value="4999" step="100">
+              <div class="price-range-labels">
+                <span>₹199</span>
+                <span id="priceRangeValue">Up to ₹4,999</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Availability</h4>
+            <ul class="filter-list">
+              <li>
+                <label>
+                  <input type="checkbox" id="inStockCheckbox" checked>
+                  In Stock Only (Artisan Ready)
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <button type="button" class="btn btn-outline btn-full btn-sm" id="resetFiltersBtn">Reset All Filters</button>
+        </aside>
+
+        <!-- Catalog Product Grid & Toolbar -->
+        <div class="catalog-content">
+          <div class="catalog-toolbar">
+            <span id="productCounterText">Showing 131 Forever Blooms</span>
+            <div class="toolbar-sort">
+              <label for="catalogSort">Sort By:</label>
+              <select id="catalogSort">
+                <option value="featured">Featured First</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="discount">Biggest Savings</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="products-grid" id="collectionsProductGrid">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="110" height="50" style="filter: brightness(0) invert(1); margin-bottom: 16px;">
+          <p>Floreal creates eternal crochet forever flowers that never wilt. Celebrating romance, birthdays, and milestones with sustainable floral art.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collections.html">All Collections</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Policies</h4>
+          <ul class="footer-links">
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="returns-policy.html">Returns & Replacement</a></li>
+            <li><a href="care-guide.html">Flower Care Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Artisan Support</h4>
+          <p>Questions about customized bouquets? WhatsApp our studio:</p>
+          <a href="https://api.whatsapp.com/send?phone=919876543210" class="btn btn-whatsapp btn-sm" target="_blank">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Floreal Inc. Handcrafted with ❤️ across India.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Drawers & Modals -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Bag</h3>
+      <button type="button" class="cart-drawer-close" id="cartDrawerClose">✕</button>
+    </div>
+    <div class="free-shipping-container">
+      <div class="shipping-progress-text" id="freeShippingText">Add <strong>₹999</strong> for Free Shipping!</div>
+      <div class="shipping-progress-bar-bg"><div class="shipping-progress-fill" id="freeShippingFill"></div></div>
+    </div>
+    <div class="cart-drawer-body">
+      <div id="cartEmptyView" class="cart-empty-view"><p>Your bag is empty.</p></div>
+      <div id="cartItemsList" class="cart-items-list" style="display: none;"></div>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span>Subtotal:</span><span id="cartSubtotalValue">₹0.00</span></div>
+      <button type="button" class="btn-cart-checkout" id="cartCheckoutBtn">Proceed to Checkout →</button>
+      <button type="button" class="btn btn-whatsapp btn-full" id="cartWhatsappBtn" style="margin-top: 8px;">Order via WhatsApp 💬</button>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="searchInput" placeholder="Search forever flowers, bouquets, pots, plushies..." autocomplete="off">
+        <button type="button" class="search-close-btn" id="searchCloseBtn">✕</button>
+      </div>
+      <div class="search-results-list" id="searchResultsList"></div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="quickview-modal" id="quickViewModal">
+    <button type="button" class="quickview-close-btn" id="quickViewCloseBtn">✕</button>
+    <div class="quickview-gallery"><img src="" alt="" id="quickViewImg" class="quickview-main-img"></div>
+    <div class="quickview-details">
+      <span class="quickview-category" id="quickViewCategory">Bouquets</span>
+      <h2 class="quickview-title" id="quickViewTitle">Product Title</h2>
+      <div class="quickview-price-wrap"><span class="quickview-price" id="quickViewPrice">₹0.00</span><span class="quickview-compare" id="quickViewCompare">₹0.00</span></div>
+      <p class="quickview-description" id="quickViewDesc"></p>
+      <div class="quickview-actions">
+        <button type="button" class="btn-quickview-add" id="quickViewAddBtn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-notice" id="toastNotice"></div>
+
+  <!-- Scripts -->
+  <script src="assets/data/products-data.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/quickview.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      let catalog = window.FLOREAL_CATALOG;
+      try {
+        const res = await fetch('http://localhost:5000/api/products?limit=150');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.products) {
+            catalog = {
+              collections: catalog?.collections || [],
+              products: data.products.map(p => ({
+                id: p.id,
+                title: p.title,
+                handle: p.handle,
+                price: parseFloat(p.variants?.[0]?.price || p.price || 0),
+                compareAtPrice: p.variants?.[0]?.compare_at_price ? parseFloat(p.variants[0].compare_at_price) : (p.compareAtPrice || null),
+                isSale: !!p.isSale || (p.variants?.[0]?.compare_at_price > p.variants?.[0]?.price),
+                discountPercent: p.discountPercent || 0,
+                image: typeof p.image === 'string' ? p.image : (p.image?.src || p.images?.[0]?.src || p.images?.[0] || ''),
+                images: Array.isArray(p.images) ? p.images.map(img => typeof img === 'string' ? img : img.src) : [],
+                category: p.product_type || p.category || 'Bouquets',
+                tags: Array.isArray(p.tags) ? p.tags : (p.tags ? p.tags.split(', ') : []),
+                variants: p.variants || [],
+                collections: Array.isArray(p.collections) ? p.collections : []
+              }))
+            };
+          }
+        }
+      } catch (e) {}
+
+      if (!catalog) return;
+
+      const params = new URLSearchParams(window.location.search);
+      let selectedCollection = params.get('c') || 'all';
+      let maxPrice = 4999;
+      let sortMode = 'featured';
+
+      const grid = document.getElementById('collectionsProductGrid');
+      const counter = document.getElementById('productCounterText');
+      const sidebarList = document.getElementById('sidebarCollectionList');
+      const slider = document.getElementById('priceRangeSlider');
+      const priceVal = document.getElementById('priceRangeValue');
+      const sortSelect = document.getElementById('catalogSort');
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      const titleEl = document.getElementById('pageHeadingTitle');
+      const crumbEl = document.getElementById('breadcrumbCollectionTitle');
+
+      // Populate sidebar collections
+      const collections = [
+        { handle: 'all', title: 'All Products' },
+        { handle: 'bouquets', title: 'Bouquets' },
+        { handle: 'single-flower', title: 'Single Flower' },
+        { handle: 'pots', title: 'Pots & Plants' },
+        { handle: 'characters', title: 'Characters' },
+        { handle: 'plushie', title: 'Plushies' },
+        { handle: 'gift-box', title: 'Gift Boxes' },
+        { handle: 'baskets', title: 'Baskets' },
+        { handle: 'combos', title: 'Combos' }
+      ];
+
+      sidebarList.innerHTML = collections.map(c => `
+        <li>
+          <label>
+            <input type="radio" name="collectionFilter" value="${c.handle}" ${selectedCollection.toLowerCase() === c.handle.toLowerCase() ? 'checked' : ''}>
+            ${c.title}
+          </label>
+        </li>
+      `).join('');
+
+      sidebarList.querySelectorAll('input').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          selectedCollection = e.target.value;
+          const newUrl = selectedCollection === 'all' ? 'collections.html' : `collections.html?c=${selectedCollection}`;
+          window.history.replaceState(null, '', newUrl);
+          render();
+        });
+      });
+
+      if (slider) {
+        slider.addEventListener('input', (e) => {
+          maxPrice = parseFloat(e.target.value);
+          if (priceVal) priceVal.textContent = `Up to ₹${maxPrice.toLocaleString('en-IN')}`;
+          render();
+        });
+      }
+
+      if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+          sortMode = e.target.value;
+          render();
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          selectedCollection = 'all';
+          maxPrice = 4999;
+          slider.value = 4999;
+          priceVal.textContent = 'Up to ₹4,999';
+          sidebarList.querySelector('input[value="all"]').checked = true;
+          window.history.replaceState(null, '', 'collections.html');
+          render();
+        });
+      }
+
+      function updateNavHighlight(handle) {
+        const navLinks = document.querySelectorAll('#mainNav a');
+        const h = (handle || 'all').toLowerCase();
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          const href = (link.getAttribute('href') || '').toLowerCase();
+          if (h === 'all' || !h) {
+            if (href === 'collections.html') link.classList.add('active');
+          } else {
+            if (href.includes(`c=${h}`)) {
+              link.classList.add('active');
+            }
+          }
+        });
+      }
+
+      function render() {
+        updateNavHighlight(selectedCollection);
+        let list = [...catalog.products];
+
+        if (selectedCollection !== 'all') {
+          const rawMatch = selectedCollection.toLowerCase();
+          const match = rawMatch.replace(/-/g, ' ');
+          list = list.filter(p => {
+            if (Array.isArray(p.collections) && (p.collections.includes(rawMatch) || p.collections.includes(match))) return true;
+            return (p.category || p.product_type || '').toLowerCase().includes(match) ||
+                   (p.title || '').toLowerCase().includes(match) ||
+                   (Array.isArray(p.tags) && p.tags.some(t => t.toLowerCase().includes(match)));
+          });
+          if (titleEl) titleEl.textContent = `${selectedCollection.replace(/-/g, ' ').toUpperCase()} Collection`;
+          if (crumbEl) crumbEl.textContent = selectedCollection.replace(/-/g, ' ');
+        } else {
+          if (titleEl) titleEl.textContent = 'All Handcrafted Collections';
+          if (crumbEl) crumbEl.textContent = 'All Products';
+        }
+
+        list = list.filter(p => p.price <= maxPrice);
+
+        if (sortMode === 'price-asc') list.sort((a,b) => a.price - b.price);
+        else if (sortMode === 'price-desc') list.sort((a,b) => b.price - a.price);
+        else if (sortMode === 'discount') list.sort((a,b) => (b.discountPercent || 0) - (a.discountPercent || 0));
+
+        if (counter) counter.textContent = `Showing ${list.length} Forever Blooms`;
+
+        if (list.length === 0) {
+          grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;"><h3>No blooms found matching criteria</h3><p>Try resetting the price slider or choosing another collection.</p></div>';
+          return;
+        }
+
+        grid.innerHTML = list.map(p => {
+          const isWishlisted = window.florealWishlist && window.florealWishlist.has(p.id);
+          return `
+            <div class="product-card" data-product-id="${p.id}">
+              <div class="product-image-container">
+                ${p.isSale ? `<span class="badge-tag sale">${p.discountPercent}% OFF</span>` : ''}
+                <a href="product.html?id=${p.id}"><img src="${p.image}" alt="${p.title}" loading="lazy"></a>
+                <button type="button" class="product-wishlist-btn ${isWishlisted ? 'active' : ''}" data-product-id="${p.id}" aria-label="Add to Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="${isWishlisted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+                <div class="card-action-overlay">
+                  <button type="button" class="btn-card-quickadd" data-product-id="${p.id}">+ Quick Add</button>
+                  <button type="button" class="btn-card-quickview" data-product-id="${p.id}">Quick View</button>
+                </div>
+              </div>
+              <div class="product-info">
+                <span class="product-type">${p.category}</span>
+                <h3 class="product-title"><a href="product.html?id=${p.id}">${p.title}</a></h3>
+                <div class="product-price-row">
+                  <span class="price-current">₹${p.price.toFixed(2)}</span>
+                  ${p.compareAtPrice ? `<span class="price-compare">₹${p.compareAtPrice.toFixed(2)}</span>` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      grid.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-card-quickadd');
+        if (btn) {
+          e.preventDefault();
+          const p = catalog.products.find(x => String(x.id) === String(btn.dataset.productId));
+          if (p && window.florealCart) window.florealCart.addItem(p, 1);
+          return;
+        }
+        const qv = e.target.closest('.btn-card-quickview');
+        if (qv) {
+          e.preventDefault();
+          const p = catalog.products.find(x => String(x.id) === String(qv.dataset.productId));
+          if (p && window.florealQuickView) window.florealQuickView.open(p);
+        }
+      });
+
+      render();
+    });
+  </script>
+</body>
+</html>
+

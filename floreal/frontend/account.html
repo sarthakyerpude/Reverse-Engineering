@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Customer Account & Orders | Floreal Forever Flowers</title>
+  <meta name="description" content="View past orders, track live artisan handcrafting, and manage delivery addresses.">
+  <link rel="icon" type="image/webp" href="http://localhost:5000/images/favicon-16x16_3_32x32.webp">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <style>
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .status-confirmed { background: #e0f2fe; color: #0369a1; }
+    .status-shipped { background: #fef3c7; color: #b45309; }
+    .status-delivered { background: #dcfce7; color: #15803d; }
+    .status-cancelled { background: #fee2e2; color: #b91c1c; }
+    .addr-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      position: relative;
+    }
+    .addr-card.default {
+      border-color: #f472b6;
+      background: #fdf2f8;
+    }
+  </style>
+</head>
+<body style="background: var(--color-bg-subtle);">
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>🦈 As Seen on Shark Tank India Season 5</span>
+      <span>🌸 100% Handcrafted Forever Flowers — Never Fade</span>
+      <span>🚚 FREE Shipping on Orders Above ₹999</span>
+      <span>💝 Handcrafted with Love by Women Artisans</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a href="index.html" class="header-logo">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="120" height="57">
+        </a>
+      </div>
+
+      <nav class="main-navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">Our Story</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="wishlist.html" class="header-action-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="wishlist-count-badge" style="display: none;">0</span>
+        </a>
+        <a href="account.html" class="header-action-btn active" aria-label="Customer Account">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <button type="button" class="header-action-btn" data-cart-toggle aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> <span>/</span> <span>Customer Account</span>
+      </div>
+
+      <!-- Logged-Out Prompt -->
+      <div id="unauthenticatedState" style="display: none; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 50px 20px; text-align: center; max-width: 600px; margin: 30px auto;">
+        <div style="font-size: 40px; margin-bottom: 12px;">🌸</div>
+        <h2 style="font-size: 22px; margin-bottom: 8px;">Sign in to your Floreal Account</h2>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 24px;">Track live artisan orders, manage delivery addresses, and view your saved forever flower wishlist.</p>
+        <button type="button" class="btn btn-primary" onclick="window.FlorealAuth && window.FlorealAuth.openModal('login')" style="padding: 12px 28px;">
+          Sign In / Create Account ➔
+        </button>
+      </div>
+
+      <!-- Authenticated Account View -->
+      <div id="authenticatedState" style="display: none;">
+        <!-- Account Profile Header -->
+        <div style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: #fdf2f8; border: 2px solid #db2777; color: #db2777; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700;" id="accountAvatarLetter">
+              P
+            </div>
+            <div>
+              <h2 style="font-size: 18px; margin-bottom: 2px;" id="accountCustomerName">Loading...</h2>
+              <p style="font-size: 13px; color: var(--color-text-muted); margin: 0;" id="accountCustomerDetails">...</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px;">
+            <a href="wishlist.html" class="btn btn-outline btn-sm">Saved Wishlist ❤️</a>
+            <button type="button" class="btn btn-outline btn-sm" onclick="window.FlorealAuth && window.FlorealAuth.logout()">Log Out</button>
+          </div>
+        </div>
+
+        <!-- Account Navigation Tabs -->
+        <div class="admin-nav" style="border-bottom: 1px solid var(--color-border); margin-bottom: 25px;">
+          <a href="#orders" class="admin-nav-item active" data-tab="orders">📦 Order History</a>
+          <a href="#addresses" class="admin-nav-item" data-tab="addresses">📍 Saved Delivery Addresses</a>
+          <a href="#profile" class="admin-nav-item" data-tab="profile">👤 Edit Profile</a>
+          <a href="#care" class="admin-nav-item" data-tab="care">✨ Flower Care Instructions</a>
+        </div>
+
+        <!-- Orders Tab Pane -->
+        <div class="admin-tab-pane active" id="tab-orders">
+          <div id="accountOrdersList">
+            <p style="color: #64748b; font-size: 14px;">Loading orders from database...</p>
+          </div>
+        </div>
+
+        <!-- Addresses Tab Pane -->
+        <div class="admin-tab-pane" id="tab-addresses">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="font-size: 17px; margin: 0;">Your Saved Addresses</h3>
+            <button type="button" class="btn btn-outline btn-sm" id="toggleAddAddressBtn">+ Add New Address</button>
+          </div>
+
+          <!-- Add Address Form (Hidden by default) -->
+          <div id="newAddressFormWrapper" style="display: none; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+            <h4 style="margin: 0 0 14px 0; font-size: 15px;">Add Delivery Address</h4>
+            <form id="newAddressForm">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label>Full Name *</label>
+                  <input type="text" id="newAddrName" required placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                  <label>Mobile Number *</label>
+                  <input type="tel" id="newAddrPhone" required placeholder="10-digit mobile">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Street Address / Flat / Building *</label>
+                <input type="text" id="newAddrLine1" required placeholder="Flat / Building, Street name">
+              </div>
+              <div class="form-grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;">
+                <div class="form-group">
+                  <label>PIN Code *</label>
+                  <input type="text" id="newAddrPin" required maxlength="6" placeholder="PIN Code">
+                </div>
+                <div class="form-group">
+                  <label>City *</label>
+                  <input type="text" id="newAddrCity" required placeholder="City">
+                </div>
+                <div class="form-group">
+                  <label>State *</label>
+                  <input type="text" id="newAddrState" required placeholder="State">
+                </div>
+              </div>
+              <div style="margin-top: 10px; display: flex; gap: 10px;">
+                <button type="submit" class="btn btn-primary btn-sm">Save Address to Account</button>
+                <button type="button" class="btn btn-outline btn-sm" id="cancelAddAddressBtn">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="accountAddressesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+            <!-- Populated from SQLite -->
+          </div>
+        </div>
+
+        <!-- Profile Tab Pane -->
+        <div class="admin-tab-pane" id="tab-profile">
+          <div style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px; max-width: 500px;">
+            <h3 style="font-size: 16px; margin-bottom: 16px;">Personal Information</h3>
+            <form id="profileUpdateForm">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="profileNameInput" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="profileEmailInput" disabled style="background: #f1f5f9; cursor: not-allowed;">
+                <small style="color: #64748b; font-size: 11px;">Email cannot be changed.</small>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="profilePhoneInput" placeholder="+91 98765 43210">
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm" id="profileSubmitBtn" style="margin-top: 10px;">
+                Update Profile
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Care Tab Pane -->
+        <div class="admin-tab-pane" id="tab-care">
+          <div style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px;">
+            <h3>How to Maintain Your Forever Flowers</h3>
+            <p style="color: #666; font-size: 14px; margin: 10px 0 20px;">Your blooms never wilt, lose color, or need watering! Follow these quick tips:</p>
+            <ul style="font-size: 14px; color: #444; line-height: 1.8; padding-left: 20px;">
+              <li><strong>Dusting:</strong> Lightly brush with a soft makeup brush or gentle cool hair dryer.</li>
+              <li><strong>Keep Dry:</strong> Crochet yarn is dyed with eco-friendly inks; keep away from soaking water.</li>
+              <li><strong>Reshaping:</strong> The internal floral wire stems are 100% flexible. Bend or adjust them to fit any vase!</li>
+            </ul>
+            <a href="care-guide.html" class="btn btn-outline btn-sm" style="margin-top: 10px;">Read Full Care Guide →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="http://localhost:5000/images/LOGO.png" alt="Floreal Logo" width="110" height="50" style="filter: brightness(0) invert(1); margin-bottom: 16px;">
+          <p>Floreal creates eternal crochet forever flowers that never wilt. Handcrafted with love across India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="returns-policy.html">Replacement Guarantee</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Floreal Inc. Handcrafted Forever Blooms.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const API_BASE = 'http://localhost:5000/api';
+
+      // Tab switcher
+      function switchTab(tabKey) {
+        document.querySelectorAll('.admin-nav-item').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.admin-tab-pane').forEach(p => p.classList.remove('active'));
+        const tabLink = document.querySelector(`.admin-nav-item[data-tab="${tabKey}"]`);
+        const pane = document.getElementById(`tab-${tabKey}`);
+        if (tabLink) tabLink.classList.add('active');
+        if (pane) pane.classList.add('active');
+      }
+
+      document.querySelectorAll('.admin-nav-item').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          e.preventDefault();
+          switchTab(tab.dataset.tab);
+        });
+      });
+
+      // Handle hash navigation e.g. account.html#addresses
+      const hash = window.location.hash.replace('#', '');
+      if (['orders', 'addresses', 'profile', 'care'].includes(hash)) {
+        switchTab(hash);
+      }
+
+      // Check login state
+      function syncAccountView() {
+        const isLogged = window.FlorealAuth && window.FlorealAuth.isLoggedIn();
+        const unauth = document.getElementById('unauthenticatedState');
+        const auth = document.getElementById('authenticatedState');
+
+        if (!isLogged) {
+          if (unauth) unauth.style.display = 'block';
+          if (auth) auth.style.display = 'none';
+          return;
+        }
+
+        if (unauth) unauth.style.display = 'none';
+        if (auth) auth.style.display = 'block';
+
+        const user = window.FlorealAuth.getUser();
+        document.getElementById('accountCustomerName').textContent = user.name;
+        document.getElementById('accountCustomerDetails').textContent = `${user.email} • ${user.phone || 'Phone not set'} • Customer Account`;
+        document.getElementById('accountAvatarLetter').textContent = user.name.charAt(0).toUpperCase();
+
+        document.getElementById('profileNameInput').value = user.name;
+        document.getElementById('profileEmailInput').value = user.email;
+        document.getElementById('profilePhoneInput').value = user.phone || '';
+
+        loadOrders();
+        loadAddresses();
+      }
+
+      window.addEventListener('floreal:auth-change', syncAccountView);
+      syncAccountView();
+
+      // ─── LOAD ORDERS FROM SQLITE ───
+      async function loadOrders() {
+        const container = document.getElementById('accountOrdersList');
+        try {
+          const res = await window.FlorealAuth.authFetch(`${API_BASE}/orders`);
+          if (res.ok) {
+            const data = await res.json();
+            const orders = data.orders || [];
+
+            if (orders.length === 0) {
+              container.innerHTML = `
+                <div style="background: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 40px; text-align: center;">
+                  <h4>No orders placed yet</h4>
+                  <p style="color: #777; margin: 8px 0 20px;">Explore eternal bouquets lovingly handcrafted by women artisans.</p>
+                  <a href="collections.html" class="btn btn-primary btn-sm">Explore Forever Blooms</a>
+                </div>
+              `;
+              return;
+            }
+
+            container.innerHTML = orders.map(order => {
+              const dateStr = new Date(order.created_at).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' });
+              const statusClass = `status-${(order.order_status || 'confirmed').toLowerCase()}`;
+              const canCancel = order.order_status === 'confirmed';
+
+              return `
+                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: var(--radius-lg); padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                      <span class="status-badge ${statusClass}">${(order.order_status || 'confirmed').toUpperCase()}</span>
+                      <h3 style="font-size: 16px; margin: 6px 0 2px;">Order #${order.order_number}</h3>
+                      <small style="color: #64748b;">Placed on ${dateStr} • Payment: ${order.payment_method?.toUpperCase()} (${order.payment_status?.toUpperCase()})</small>
+                    </div>
+                    <div style="text-align: right;">
+                      <span style="font-size: 12px; color: #64748b;">Order Total</span>
+                      <div style="font-size: 17px; font-weight: 700; color: #db2777;">₹${order.total.toFixed(2)}</div>
+                    </div>
+                  </div>
+
+                  <div style="margin-bottom: 16px;">
+                    ${(order.items || []).map(i => `
+                      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                        ${i.image ? `<img src="${i.image}" alt="" style="width: 46px; height: 46px; object-fit: cover; border-radius: 6px;">` : ''}
+                        <div style="flex: 1;">
+                          <strong style="font-size: 14px; color: #1e293b;">${i.title}</strong><br>
+                          <small style="color: #64748b;">Qty: ${i.quantity} × ₹${i.price.toFixed(2)}</small>
+                        </div>
+                        <div style="font-weight: 600; font-size: 13px;">₹${(i.price * i.quantity).toFixed(2)}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 14px; flex-wrap: wrap; gap: 10px;">
+                    <small style="color: #64748b;">Tracking: <strong>${order.tracking_number || 'Standard Express'}</strong></small>
+                    <div style="display: flex; gap: 8px;">
+                      <a href="track-order.html?order=${order.order_number}" class="btn btn-outline btn-sm">Track Package 🚚</a>
+                      ${canCancel ? `<button type="button" class="btn btn-outline btn-sm" onclick="cancelOrder('${order.id}')" style="color: #dc2626; border-color: #fca5a5;">Cancel Order</button>` : ''}
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('');
+          }
+        } catch (err) {
+          container.innerHTML = '<p style="color: #ef4444;">Failed to load order history from server.</p>';
+        }
+      }
+
+      window.cancelOrder = async function(orderId) {
+        if (!confirm('Are you sure you want to cancel this order?')) return;
+        try {
+          const res = await window.FlorealAuth.authFetch(`${API_BASE}/orders/${orderId}/cancel`, { method: 'PUT' });
+          const data = await res.json();
+          if (res.ok) {
+            alert('Order cancelled successfully.');
+            loadOrders();
+          } else {
+            alert(data.error || 'Failed to cancel order.');
+          }
+        } catch (e) {
+          alert('Cancel error: ' + e.message);
+        }
+      };
+
+      // ─── LOAD ADDRESSES FROM SQLITE ───
+      async function loadAddresses() {
+        const grid = document.getElementById('accountAddressesGrid');
+        try {
+          const res = await window.FlorealAuth.authFetch(`${API_BASE}/user/addresses`);
+          if (res.ok) {
+            const data = await res.json();
+            const addrs = data.addresses || [];
+
+            if (addrs.length === 0) {
+              grid.innerHTML = '<p style="color: #64748b;">No saved delivery addresses. Add your first address above!</p>';
+              return;
+            }
+
+            grid.innerHTML = addrs.map(a => `
+              <div class="addr-card ${a.is_default ? 'default' : ''}">
+                ${a.is_default ? '<span style="position: absolute; top: 10px; right: 10px; background: #db2777; color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 700;">DEFAULT</span>' : ''}
+                <strong style="font-size: 14px; color: #1e293b;">${a.full_name}</strong>
+                <p style="margin: 6px 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                  ${a.address_line1}${a.address_line2 ? ', ' + a.address_line2 : ''}<br>
+                  ${a.city}, ${a.state} - ${a.pincode}<br>
+                  📞 Phone: ${a.phone}
+                </p>
+                <div style="margin-top: 10px; display: flex; gap: 8px;">
+                  <button type="button" class="btn btn-outline btn-sm" onclick="deleteAddress('${a.id}')" style="color: #dc2626; border-color: #fca5a5; font-size: 11px; padding: 4px 8px;">Delete</button>
+                </div>
+              </div>
+            `).join('');
+          }
+        } catch (err) {
+          grid.innerHTML = '<p style="color: #ef4444;">Failed to load saved addresses.</p>';
+        }
+      }
+
+      window.deleteAddress = async function(id) {
+        if (!confirm('Delete this delivery address?')) return;
+        try {
+          const res = await window.FlorealAuth.authFetch(`${API_BASE}/user/addresses/${id}`, { method: 'DELETE' });
+          if (res.ok) loadAddresses();
+        } catch (err) {}
+      };
+
+      // Toggle Add Address Form
+      const toggleAddBtn = document.getElementById('toggleAddAddressBtn');
+      const addWrapper = document.getElementById('newAddressFormWrapper');
+      const cancelAddBtn = document.getElementById('cancelAddAddressBtn');
+      if (toggleAddBtn && addWrapper) {
+        toggleAddBtn.addEventListener('click', () => addWrapper.style.display = 'block');
+      }
+      if (cancelAddBtn && addWrapper) {
+        cancelAddBtn.addEventListener('click', () => addWrapper.style.display = 'none');
+      }
+
+      // Add Address Submission
+      const newAddrForm = document.getElementById('newAddressForm');
+      if (newAddrForm) {
+        newAddrForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const payload = {
+            full_name: document.getElementById('newAddrName').value.trim(),
+            phone: document.getElementById('newAddrPhone').value.trim(),
+            address_line1: document.getElementById('newAddrLine1').value.trim(),
+            pincode: document.getElementById('newAddrPin').value.trim(),
+            city: document.getElementById('newAddrCity').value.trim(),
+            state: document.getElementById('newAddrState').value.trim()
+          };
+
+          try {
+            const res = await window.FlorealAuth.authFetch(`${API_BASE}/user/addresses`, {
+              method: 'POST',
+              body: JSON.stringify(payload)
+            });
+            if (res.ok) {
+              newAddrForm.reset();
+              addWrapper.style.display = 'none';
+              loadAddresses();
+            } else {
+              const err = await res.json();
+              alert(err.error || 'Failed to save address.');
+            }
+          } catch (e) {
+            alert('Error saving address: ' + e.message);
+          }
+        });
+      }
+
+      // Profile Form Submission
+      const profileForm = document.getElementById('profileUpdateForm');
+      if (profileForm) {
+        profileForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const submitBtn = document.getElementById('profileSubmitBtn');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Saving changes...';
+
+          try {
+            const res = await window.FlorealAuth.authFetch(`${API_BASE}/auth/profile`, {
+              method: 'PUT',
+              body: JSON.stringify({
+                name: document.getElementById('profileNameInput').value.trim(),
+                phone: document.getElementById('profilePhoneInput').value.trim()
+              })
+            });
+            const data = await res.json();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Update Profile';
+
+            if (res.ok) {
+              localStorage.setItem('floreal_user', JSON.stringify(data.user));
+              window.FlorealAuth.user = data.user;
+              window.FlorealAuth.updateHeaderUI();
+              syncAccountView();
+              alert('Profile updated successfully! 🌸');
+            } else {
+              alert(data.error || 'Failed to update profile.');
+            }
+          } catch (e) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Update Profile';
+            alert('Error updating profile: ' + e.message);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
