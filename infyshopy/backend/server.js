@@ -86,4 +86,7 @@ if (require.main === module) {
   });
 }
 
-module.exports = { app, server };
+// Export Express app as default for Vercel Serverless runtime, while preserving named destructuring for local tests
+app.app = app;
+app.server = server;
+module.exports = app;
