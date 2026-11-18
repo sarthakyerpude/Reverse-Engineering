@@ -1,9 +1,20 @@
 const Database = require('better-sqlite3');
+const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
-const { v4: uuidv4 } = require('uuid');
 
-const dbPath = path.join(__dirname, 'infyshopy.sqlite');
+const uuidv4 = () => crypto.randomUUID();
+
+const bundledDbPath = path.join(__dirname, 'infyshopy.sqlite');
+const dbPath = process.env.VERCEL
+  ? path.join('/tmp', 'infyshopy.sqlite')
+  : bundledDbPath;
+
+if (process.env.VERCEL && !fs.existsSync(dbPath) && fs.existsSync(bundledDbPath)) {
+  fs.copyFileSync(bundledDbPath, dbPath);
+}
+
 const db = new Database(dbPath);
 
 // Enable WAL mode & foreign keys

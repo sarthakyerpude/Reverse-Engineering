@@ -12,10 +12,11 @@ const router = express.Router();
 
 // Helper to set session cookie matching live infyshopy.in behavior
 function setSessionCookie(res, token) {
+  const isProd = process.env.NODE_ENV === 'production' || Boolean(process.env.VERCEL);
   res.cookie('infy_auth_session', token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
+    secure: isProd,
+    sameSite: process.env.VERCEL ? 'none' : 'lax',
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in ms (604800s)
     path: '/'
   });
@@ -104,7 +105,13 @@ router.post('/logout', (req, res) => {
   if (req.sessionToken) {
     deleteSession(req.sessionToken);
   }
-  res.clearCookie('infy_auth_session', { path: '/' });
+  const isProd = process.env.NODE_ENV === 'production' || Boolean(process.env.VERCEL);
+  res.clearCookie('infy_auth_session', {
+    httpOnly: true,
+    secure: isProd,
+    sameSite: process.env.VERCEL ? 'none' : 'lax',
+    path: '/'
+  });
   return res.json({ ok: true, message: 'Signed out successfully' });
 });
 

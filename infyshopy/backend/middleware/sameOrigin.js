@@ -22,7 +22,9 @@ function sameOriginCheck(req, res, next) {
         parsed.hostname === 'localhost' ||
         parsed.hostname === '127.0.0.1' ||
         parsed.hostname === 'infyshopy.in' ||
-        parsed.hostname.endsWith('.infyshopy.in')
+        parsed.hostname.endsWith('.infyshopy.in') ||
+        parsed.hostname.endsWith('.vercel.app') ||
+        (process.env.FRONTEND_URL && urlStr.startsWith(process.env.FRONTEND_URL))
       );
     } catch {
       return false;
