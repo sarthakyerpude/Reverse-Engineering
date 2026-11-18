@@ -28,7 +28,15 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!assets/|api/|auth/).*)",
+      "source": "/api/:path*",
+      "destination": "https://infyshopy-backend.vercel.app/api/:path*"
+    },
+    {
+      "source": "/auth/:path+",
+      "destination": "https://infyshopy-backend.vercel.app/auth/:path+"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],

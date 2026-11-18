@@ -1,5 +1,4 @@
 const express = require('express');
-const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const {
   findUserByEmail,
@@ -7,6 +6,7 @@ const {
   createSession,
   deleteSession
 } = require('../db/database');
+const { createSignedToken, revokeToken } = require('../utils/sessionToken');
 
 const router = express.Router();
 
@@ -34,10 +34,14 @@ router.post('/login', (req, res) => {
     return res.status(401).json({ error: 'Invalid email address or password' });
   }
 
-  // Create session
-  const token = crypto.randomBytes(32).toString('hex');
+  // Create signed session token (resilient across serverless cold starts)
+  const token = createSignedToken(user);
   const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
-  createSession(user.id, token, expiresAt);
+  try {
+    createSession(user.id, token, expiresAt);
+  } catch (err) {
+    console.warn('Session DB persistence warning (using stateless fallback):', err.message);
+  }
 
   setSessionCookie(res, token);
   return res.json({
@@ -75,9 +79,13 @@ router.post('/register', (req, res) => {
     categories: Array.isArray(categories) ? categories : ['Sarees']
   });
 
-  const token = crypto.randomBytes(32).toString('hex');
+  const token = createSignedToken(newUser);
   const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
-  createSession(newUser.id, token, expiresAt);
+  try {
+    createSession(newUser.id, token, expiresAt);
+  } catch (err) {
+    console.warn('Session DB persistence warning (using stateless fallback):', err.message);
+  }
 
   setSessionCookie(res, token);
   return res.json({ ok: true, message: 'Account created successfully' });
@@ -85,6 +93,7 @@ router.post('/register', (req, res) => {
 
 // GET /auth/session
 router.get('/session', (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
   if (!req.user) {
     return res.status(401).json({ authenticated: false, error: 'Session expired or not found' });
   }
@@ -103,7 +112,10 @@ router.get('/session', (req, res) => {
 // POST /auth/logout
 router.post('/logout', (req, res) => {
   if (req.sessionToken) {
-    deleteSession(req.sessionToken);
+    try {
+      deleteSession(req.sessionToken);
+    } catch {}
+    revokeToken(req.sessionToken);
   }
   const isProd = process.env.NODE_ENV === 'production' || Boolean(process.env.VERCEL);
   res.clearCookie('infy_auth_session', {

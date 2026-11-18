@@ -1,4 +1,5 @@
-const { findSessionByToken } = require('../db/database');
+const { findSessionByToken, findUserByEmail, getUserById } = require('../db/database');
+const { verifySignedToken } = require('../utils/sessionToken');
 
 function authMiddleware(req, res, next) {
   // Read session cookie or Authorization header
@@ -10,21 +11,50 @@ function authMiddleware(req, res, next) {
   }
 
   const session = findSessionByToken(token);
-  if (!session) {
+  if (session) {
+    req.user = {
+      id: session.user_id,
+      email: session.email,
+      fullName: session.full_name,
+      role: session.role,
+      balance: session.balance_credits,
+      sellerCode: session.seller_code,
+      phone: session.phone,
+      countryCode: session.country_code
+    };
+    req.sessionToken = token;
+    return next();
+  }
+
+  // Serverless fallback: verify stateless HMAC-signed session token across ephemeral /tmp instances
+  const payload = verifySignedToken(token);
+  if (!payload) {
     req.user = null;
     return next();
   }
 
-  req.user = {
-    id: session.user_id,
-    email: session.email,
-    fullName: session.full_name,
-    role: session.role,
-    balance: session.balance_credits,
-    sellerCode: session.seller_code,
-    phone: session.phone,
-    countryCode: session.country_code
-  };
+  const dbUser = getUserById(payload.uid) || (payload.email ? findUserByEmail(payload.email) : null);
+  req.user = dbUser
+    ? {
+        id: dbUser.id,
+        email: dbUser.email,
+        fullName: dbUser.full_name,
+        role: dbUser.role,
+        balance: dbUser.balance_credits,
+        sellerCode: dbUser.seller_code,
+        phone: dbUser.phone,
+        countryCode: dbUser.country_code
+      }
+    : {
+        id: payload.uid,
+        email: payload.email,
+        fullName: payload.fullName || '',
+        role: payload.role || 'owner',
+        balance: payload.balance ?? 20,
+        sellerCode: payload.sellerCode || '',
+        phone: '',
+        countryCode: '+91'
+      };
   req.sessionToken = token;
   next();
 }
